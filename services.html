@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="description" content="Turnkey landscape architecture, automated living green walls, precision irrigation, water features, architectural lighting, and horticultural AMCs across Mumbai, Alibaug, and India." />
+  <title>Landscape Architecture & Living Systems — Plantae World</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="nav-drawer.css?v=5.0" />
+  <link rel="stylesheet" href="services.css?v=3.3" />
+
+  <script>
+    // Bulletproof Navigation Drawer & Header Controller
+    function openNavDrawer() {
+      var d = document.getElementById('navDrawer');
+      var b = document.getElementById('navDrawerBackdrop');
+      var btn = document.getElementById('openNavDrawer');
+      if (d) {
+        d.classList.add('is-open');
+        d.setAttribute('aria-hidden', 'false');
+      }
+      if (b) {
+        b.classList.add('is-open');
+        b.setAttribute('aria-hidden', 'false');
+      }
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    window.openNavDrawer = openNavDrawer;
+
+    function closeNavDrawer() {
+      var d = document.getElementById('navDrawer');
+      var b = document.getElementById('navDrawerBackdrop');
+      var btn = document.getElementById('openNavDrawer');
+      if (d) {
+        d.classList.remove('is-open');
+        d.setAttribute('aria-hidden', 'true');
+      }
+      if (b) {
+        b.classList.remove('is-open');
+        b.setAttribute('aria-hidden', 'true');
+      }
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    window.closeNavDrawer = closeNavDrawer;
+
+    // Complimentary Site Visit Modal Controller
+    function openConsultModal(scopeValue) {
+      var m = document.getElementById('consultModal');
+      var b = document.getElementById('consultModalBackdrop');
+      if (m && b) {
+        if (scopeValue) {
+          var select = m.querySelector('#modal-scope');
+          if (select) {
+            for (var i = 0; i < select.options.length; i++) {
+              if (select.options[i].text.indexOf(scopeValue) !== -1 || select.options[i].value.indexOf(scopeValue) !== -1) {
+                select.selectedIndex = i;
+                break;
+              }
+            }
+          }
+        }
+        m.classList.add('is-open');
+        m.setAttribute('aria-hidden', 'false');
+        b.classList.add('is-open');
+        b.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        var firstInput = m.querySelector('input');
+        if (firstInput) setTimeout(function() { firstInput.focus(); }, 100);
+      }
+    }
+    window.openConsultModal = openConsultModal;
+
+    function closeConsultModal() {
+      var m = document.getElementById('consultModal');
+      var b = document.getElementById('consultModalBackdrop');
+      if (m && b) {
+        m.classList.remove('is-open');
+        m.setAttribute('aria-hidden', 'true');
+        b.classList.remove('is-open');
+        b.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+    window.closeConsultModal = closeConsultModal;
+
+    (function() {
+      function updateHeaderScroll() {
+        var h = document.getElementById('siteHeader') || document.querySelector('.site-header');
+        if (!h) return;
+        var y = window.scrollY || window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || (document.body && document.body.scrollTop) || 0;
+        if (y > 20) {
+          h.classList.add('is-scrolled');
+        } else {
+          h.classList.remove('is-scrolled');
+        }
+      }
+      window.addEventListener('scroll', updateHeaderScroll, { passive: true, capture: true });
+      document.addEventListener('scroll', updateHeaderScroll, { passive: true, capture: true });
+      window.addEventListener('wheel', function() { requestAnimationFrame(updateHeaderScroll); }, { passive: true });
+      window.addEventListener('touchmove', function() { requestAnimationFrame(updateHeaderScroll); }, { passive: true });
+      document.addEventListener('DOMContentLoaded', updateHeaderScroll);
+      window.addEventListener('load', updateHeaderScroll);
+      window.updateSiteHeaderScroll = updateHeaderScroll;
+    })();
+
+    // Early click delegation
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('#openNavDrawer, .header-menu-btn')) {
+        e.preventDefault();
+        openNavDrawer();
+      } else if (e.target.closest('#closeNavDrawer, .nav-drawer-close, #navDrawerBackdrop')) {
+        e.preventDefault();
+        closeNavDrawer();
+      } else if (e.target.closest('[data-open-consultation]')) {
+        e.preventDefault();
+        openConsultModal();
+      }
+    }, true);
+
+    // Escape Key Handler
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeNavDrawer();
+        closeConsultModal();
+      }
+    });
+  </script>
+</head>
+<body class="services-page">
+
+  <!-- Floating Luxury Site Header -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="Plantae World home">
+      <img class="brand-logo" src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
+    </a>
+
+    <div class="header-actions">
+      <a class="header-action-btn header-call-btn" href="tel:07400077765" aria-label="Call Plantae World 07400077765">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="header-action-btn header-wa-btn" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20enquire%20about%20a%20landscaping%20project" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      </a>
+      <button class="header-menu-btn" id="openNavDrawer" type="button" aria-expanded="false" aria-controls="navDrawer" aria-label="Open Navigation Menu" onclick="openNavDrawer()">
+        <span class="menu-icon-lines" aria-hidden="true">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Drawer Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop" aria-hidden="true" onclick="closeNavDrawer()"></div>
+
+  <!-- Off-Canvas Luxury Slide-in Drawer -->
+  <aside class="nav-drawer" id="navDrawer" aria-label="Site Navigation" aria-hidden="true">
+    <div class="nav-drawer-header">
+      <a class="nav-drawer-brand" href="index.html" aria-label="Plantae World">
+        <img src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
+      </a>
+      <button class="nav-drawer-close" id="closeNavDrawer" type="button" aria-label="Close navigation menu" onclick="closeNavDrawer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-drawer-body">
+      <nav class="drawer-nav-list" aria-label="Drawer Navigation">
+        <a class="drawer-nav-link" href="index.html">
+          <span class="drawer-link-text">Home</span>
+        </a>
+        <a class="drawer-nav-link is-active" href="services.html">
+          <span class="drawer-link-text">Services</span>
+        </a>
+        <a class="drawer-nav-link" href="design-and-build.html">
+          <span class="drawer-link-text">Design and Build</span>
+        </a>
+        <a class="drawer-nav-link" href="selected-works.html">
+          <span class="drawer-link-text">Projects</span>
+        </a>
+        <a class="drawer-nav-link" href="plantae-luxe.html">
+          <span class="drawer-link-text">Plantae Luxe Boutique</span>
+        </a>
+        <a class="drawer-nav-link" href="about.html">
+          <span class="drawer-link-text">About</span>
+        </a>
+        <a class="drawer-nav-link" href="contact.html">
+          <span class="drawer-link-text">Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="nav-drawer-footer">
+      <div class="drawer-contact-block">
+        <p class="drawer-block-title">Studio & Consultation</p>
+        <address class="drawer-address">
+          32, New Kamani Chambers, Adi Marzaban Path,<br>
+          Ballard Estate, Fort, Mumbai 400001
+        </address>
+
+        <div class="drawer-contact-links">
+          <div class="drawer-phone-wa-row">
+            <a class="drawer-contact-link" href="tel:07400077765" aria-label="Call 07400077765">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>07400077765</span>
+            </a>
+            <span class="drawer-divider">·</span>
+            <a class="drawer-contact-link" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20enquire%20about%20a%20landscaping%20project" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 07400077765">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+          <a class="drawer-contact-link" href="mailto:shruti@plantaeworld.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>shruti@plantaeworld.com</span>
+          </a>
+        </div>
+      </div>
+      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Book Consultation</button>
+    </div>
+  </aside>
+
+  <main id="top">
+
+    <!-- Atmospheric Page Hero: Exact Match Typography, Vibrant Less Dim Photography, 4 Disciplines Links on Screen 1 -->
+    <section class="services-hero">
+      <div class="services-hero-bg">
+        <img src="assets/images/service-landscape.jpg" alt="Plantae World luxury landscape architecture" />
+      </div>
+      <div class="services-hero-overlay"></div>
+
+      <div class="services-hero-content">
+        <p class="eyebrow">LANDSCAPE SERVICES · MUMBAI &amp; BEYOND</p>
+        <h1 class="services-hero-title">
+          Landscape Design,<br>Systems &amp; <em>Care.</em>
+        </h1>
+        <p class="services-hero-desc">
+          From master planning and planting to irrigation, lighting and ongoing maintenance, explore the services Plantae provides to create and care for lasting landscapes.
+        </p>
+        <div class="services-hero-actions">
+          <button class="button fill" type="button" onclick="openConsultModal()">Book Complimentary Site Visit</button>
+          <a class="button glass" href="https://wa.me/917400077765?text=Hello%20Plantae%20World!%20I%20would%20like%20to%20discuss%20a%20landscaping%20project." target="_blank" rel="noopener noreferrer">Inquire on WhatsApp</a>
+        </div>
+
+        <!-- 4 Service Disciplines Links (Single Row, Straight Vertical Dividers, Exact Downward Arrows) -->
+        <nav class="hero-section-nav" aria-label="Explore Services Disciplines">
+          <a class="hero-nav-anchor" href="#architecture">
+            <span class="anchor-title">Architecture &amp; Masterplanning</span>
+            <svg class="anchor-arrow-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m0 0l-5-5m5 5l5-5"/></svg>
+          </a>
+          <span class="anchor-pipe" aria-hidden="true"></span>
+          <a class="hero-nav-anchor" href="#living-systems">
+            <span class="anchor-title">Living Systems &amp; Botanical Curation</span>
+            <svg class="anchor-arrow-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m0 0l-5-5m5 5l5-5"/></svg>
+          </a>
+          <span class="anchor-pipe" aria-hidden="true"></span>
+          <a class="hero-nav-anchor" href="#water-lighting">
+            <span class="anchor-title">Water, Irrigation &amp; Light</span>
+            <svg class="anchor-arrow-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m0 0l-5-5m5 5l5-5"/></svg>
+          </a>
+          <span class="anchor-pipe" aria-hidden="true"></span>
+          <a class="hero-nav-anchor" href="#maintenance">
+            <span class="anchor-title">Care &amp; Maintenance</span>
+            <svg class="anchor-arrow-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m0 0l-5-5m5 5l5-5"/></svg>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 1: ARCHITECTURE & MASTERPLANNING
+         Softscape, Hardscape, Stonework, Terrace Gardens
+         ==================================================================== -->
+    <section class="service-cluster" id="architecture">
+      <div class="cluster-head">
+        <h2 class="cluster-title">Exterior Architecture &amp; Landscaping</h2>
+        <p class="cluster-desc">
+          Turnkey landscape architecture, structural masonry, specimen planting, and custom outdoor living zones.
+        </p>
+      </div>
+
+      <div class="services-grid" id="gridArchitecture" data-mobile-carousel>
+        <!-- Card 1: Softscaping -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Foliage Architecture</span>
+            <img src="assets/images/plantae softscape.jpg" alt="Estate softscaping and layered planting" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Softscape &amp; Specimen Trees</h3>
+              <p class="service-text">Acclimatized tropical planting and layered shade canopies.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Specimen shade trees &amp; palms</li>
+              <li>Living soil &amp; engineered turf</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 2: Hardscape & Decks -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Outdoor Structures</span>
+            <img src="assets/images/plantae hardscape.jpg" alt="Hardwood decking and architectural pergolas" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Hardscapes &amp; Pavilions</h3>
+              <p class="service-text">Architectural timber decking, pergolas, and open pavilions.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Teak, Ipe &amp; composite decks</li>
+              <li>Pergolas &amp; built-in seating</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 3: Stonework & Masonry -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Artisan Masonry</span>
+            <img src="assets/images/plantae stonework.jpg" alt="Natural boulder retaining walls and stone paving" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Stonework &amp; Masonry</h3>
+              <p class="service-text">Hand-chiseled boulder walls, stone paving, and pathways.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Basalt boulder retaining walls</li>
+              <li>Natural flagstone pool copings</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 4: Terrace Gardens -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Urban Sky Gardens</span>
+            <img src="assets/images/work-mumbai-penthouse.jpg" alt="High-rise penthouse terrace garden in South Mumbai" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Terrace &amp; Sky Gardens</h3>
+              <p class="service-text">High-rise botanical engineering for coastal penthouses.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Ultralight sterile soil mixes</li>
+              <li>Wind- &amp; salt-resilient flora</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-nav" data-carousel-for="gridArchitecture" aria-hidden="true">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Softscape" data-index="0"></button>
+          <button class="carousel-dot" aria-label="Hardscape" data-index="1"></button>
+          <button class="carousel-dot" aria-label="Stonework" data-index="2"></button>
+          <button class="carousel-dot" aria-label="Terraces" data-index="3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: LIVING SYSTEMS & BOTANICAL CURATION
+         Vertical Living Walls, Expert Plant Selection, Fertigation, Indoor Gardens
+         ==================================================================== -->
+    <section class="service-cluster cluster-alt" id="living-systems">
+      <div class="cluster-head">
+        <h2 class="cluster-title">Living Systems &amp; Botanical Curation</h2>
+        <p class="cluster-desc">
+          Modular vertical green walls, on-site expert plant selection, automated fertigation, and biophilic indoor atriums.
+        </p>
+      </div>
+
+      <div class="services-grid" id="gridLivingSystems" data-mobile-carousel>
+        <!-- Card 1: Vertical Living Walls -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Vertical Facades</span>
+            <img src="assets/images/service-living-wall.jpg" alt="Automated living green wall installation on Mumbai high-rise balcony" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Vertical Living Walls</h3>
+              <p class="service-text">Modular cassette systems for exterior facades and atriums.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Modular aluminum cassette framework</li>
+              <li>Natural urban microclimate cooling</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 2: Expert Plant Selection -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Botanical Curation</span>
+            <img src="assets/images/Mumbai expert selects tropical foliage.png" alt="Plantae World horticultural expert guiding plant selection at our Mumbai nursery" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Expert Plant Selection</h3>
+              <p class="service-text">On-site nursery guidance matching ideal specimens to your space, light, and lifestyle.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Open for small &amp; large spaces</li>
+              <li>Handpicked acclimatized flora</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 3: Plant Systems & Precision Fertigation -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Automated Nutrition</span>
+            <img src="assets/images/work-private-residence.jpeg" alt="Precision fertigation and automated drip system for living wall" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Precision Fertigation</h3>
+              <p class="service-text">Automated dosing delivering balanced organic liquid nutrition.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Proportional nutrient injectors</li>
+              <li>Sub-surface root telemetry sensors</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 4: Indoor Gardens & Lightwells -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Interior Biophilia</span>
+            <img src="assets/images/indoor-garden.jpg" alt="Indoor residential garden and biophilic atrium lounge" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Indoor Gardens &amp; Atriums</h3>
+              <p class="service-text">Interior biophilic lightwells and courtyards with grow lighting.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Full-spectrum grow luminaires</li>
+              <li>Concealed sub-floor drainage trays</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-nav" data-carousel-for="gridLivingSystems" aria-hidden="true">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Living Walls" data-index="0"></button>
+          <button class="carousel-dot" aria-label="Plant Selection" data-index="1"></button>
+          <button class="carousel-dot" aria-label="Fertigation" data-index="2"></button>
+          <button class="carousel-dot" aria-label="Indoor Gardens" data-index="3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: WATER, IRRIGATION & LIGHTING
+         Smart Irrigation, Waterfalls & Streams, Night Lighting, Fountains & Ponds
+         ==================================================================== -->
+    <section class="service-cluster" id="water-lighting">
+      <div class="cluster-head">
+        <h2 class="cluster-title">Water, Irrigation &amp; Light</h2>
+        <p class="cluster-desc">
+          Automated micro-drip networks, cascading natural rock streams, and warm architectural nightscapes.
+        </p>
+      </div>
+
+      <div class="services-grid" id="gridWaterLighting" data-mobile-carousel>
+        <!-- Card 1: Smart Irrigation Capabilities -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Water Conservation</span>
+            <img src="assets/images/plantae irrigation.jpg" alt="Smart automated garden irrigation and sprinkler system" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Automated Drip Irrigation</h3>
+              <p class="service-text">Smart micro-drip networks with automated weather sensing.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Evaporation-free root watering</li>
+              <li>Multi-zone scheduled controllers</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 2: Cascading Waterfalls & Water Walls -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Living Waterscapes</span>
+            <img src="assets/images/plantae waterfall.jpg" alt="Tiered natural stone waterfall and vertical water features" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Waterfalls &amp; Water Walls</h3>
+              <p class="service-text">Tiered natural stone streams, sheer water walls, and reflective basins.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Architectural water walls &amp; weirs</li>
+              <li>Hand-arranged basalt rock streams</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 3: Architectural Night Lighting -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Nightscape</span>
+            <img src="assets/images/outdoor_lighting.jpg" alt="Architectural night garden illumination and pathway lighting" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Architectural Night Lighting</h3>
+              <p class="service-text">Warm low-voltage illumination bringing gardens alive at dusk.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Warm 2700K canopy uplighting</li>
+              <li>Concealed glare-free brass fixtures</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 4: Fountains, Koi & Lily Ponds -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Ecological Water</span>
+            <img src="assets/images/chennai 3.jpg" alt="Architectural water fountain and lily pond" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Fountains &amp; Ecosystem Ponds</h3>
+              <p class="service-text">Reflecting pools and natural koi sanctuaries with UV filtration.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Multi-stage biological UV filters</li>
+              <li>Aquatic flora &amp; koi habitats</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-nav" data-carousel-for="gridWaterLighting" aria-hidden="true">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Smart Irrigation" data-index="0"></button>
+          <button class="carousel-dot" aria-label="Waterfalls" data-index="1"></button>
+          <button class="carousel-dot" aria-label="Night Lighting" data-index="2"></button>
+          <button class="carousel-dot" aria-label="Fountains" data-index="3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: CARE, MAINTENANCE & BOTANICAL STEWARDSHIP
+         AMCs, Pruning & Training, Soil Health, IPM
+         ==================================================================== -->
+    <section class="service-cluster cluster-alt" id="maintenance">
+      <div class="cluster-head">
+        <h2 class="cluster-title">Care, Maintenance &amp; Stewardship</h2>
+        <p class="cluster-desc">
+          Comprehensive annual maintenance contracts, structural aesthetic pruning, soil bio-enrichment, and organic IPM.
+        </p>
+      </div>
+
+      <div class="services-grid" id="gridMaintenance" data-mobile-carousel>
+        <!-- Card 1: Dedicated AMCs -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Year-Round Care</span>
+            <img src="assets/images/services-concierge.jpeg" alt="Professional horticultural team maintaining luxury landscape" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Annual Maintenance (AMC)</h3>
+              <p class="service-text">Scheduled weekly specialist visits and plant health guarantees.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Certified in-house horticulturists</li>
+              <li>Regular irrigation &amp; wall audits</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 2: Pruning, Crown Thinning & Topiary -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Artisan Arboriculture</span>
+            <img src="assets/images/plantae pruning.jpg" alt="Artisan landscape pruning and topiary maintenance" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Structural Pruning &amp; Topiary</h3>
+              <p class="service-text">Aesthetic crown thinning, bonsai training, and shaping.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Canopy airflow &amp; light pruning</li>
+              <li>Pre-monsoon hazard mitigation</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 3: Soil Nutrition & Bio-Enrichment -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Soil Microbiology</span>
+            <img src="assets/images/plantae services 4.jpg" alt="Organic soil conditioning and plant nutrition" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Organic Soil Nutrition</h3>
+              <p class="service-text">Custom vermicompost, biochar, and root mycorrhizae.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Mycorrhizal root inoculants</li>
+              <li>Seasonal aeration &amp; pH balancing</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 4: Integrated Pest Management -->
+        <article class="service-card-item">
+          <div class="service-media-frame">
+            <span class="service-badge">Eco Pest Protection</span>
+            <img src="assets/images/services-pest.jpg" alt="Sensitive biological plant care inspection" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <div class="service-body-top">
+              <h3 class="service-title">Integrated Pest Management</h3>
+              <p class="service-text">Cold-pressed neem washes and non-toxic biological care.</p>
+            </div>
+            <div class="service-body-divider"></div>
+            <ul class="service-highlights">
+              <li>Pet- &amp; child-safe organic sprays</li>
+              <li>Seasonal fungal &amp; spore barriers</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-nav" data-carousel-for="gridMaintenance" aria-hidden="true">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="AMCs" data-index="0"></button>
+          <button class="carousel-dot" aria-label="Pruning" data-index="1"></button>
+          <button class="carousel-dot" aria-label="Soil Health" data-index="2"></button>
+          <button class="carousel-dot" aria-label="Pest Care" data-index="3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Complimentary Site Visit & Consultation Banner -->
+    <section class="consultation-cta-banner">
+      <div class="cta-banner-container">
+        <div class="cta-banner-text">
+          <span class="cta-banner-kicker">COMPLIMENTARY ON-SITE CONSULTATION</span>
+          <h2 class="cta-banner-title">Free Site Visits, Sunlight Assessments &amp; Project Quotes</h2>
+          <p class="cta-banner-desc">
+            Whether planning an expansive farmhouse in Alibaug, an automated living wall for a corporate headquarters, or a high-rise penthouse terrace in Mumbai, our principal landscape architects visit your property at zero charge to evaluate sunlight, drainage, and architectural potential.
+          </p>
+        </div>
+        <div class="cta-banner-actions">
+          <button class="btn-banner-primary" type="button" onclick="openConsultModal()">Book Complimentary Site Visit</button>
+          <a class="btn-banner-wa" href="https://wa.me/917400077765?text=Hello%20Plantae%20World!%20I%20would%20like%20to%20request%20a%20free%20site%20visit%20and%20project%20estimate." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Inquire on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Complimentary Site Visit Modal Dialog Card -->
+  <div class="consult-modal-backdrop" id="consultModalBackdrop" aria-hidden="true" onclick="closeConsultModal()"></div>
+  <div class="consult-modal" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="consultModalTitle" aria-hidden="true">
+    <div class="consult-modal-card">
+      <button class="consult-modal-close" type="button" aria-label="Close consultation modal" onclick="closeConsultModal()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="consult-modal-header">
+        <p class="kicker">Complimentary Onsite Consultation</p>
+        <h2 class="consult-modal-title" id="consultModalTitle">Schedule a <em>Site Visit</em></h2>
+        <p class="consult-modal-subtitle">
+          Our principal landscape architects visit your property across Mumbai and MMR at zero charge to assess sunlight, drainage, soil conditions, and architectural potential.
+        </p>
+      </div>
+
+      <form class="consult-modal-form" id="consultationModalForm" data-consultation-form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="760f1a7f-5c61-480c-81d3-ba9c7e1a1189" />
+        <input type="hidden" name="subject" value="New Consultation Request — Plantae World" />
+        <input type="hidden" name="from_name" value="Plantae World Website" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+        <div class="field">
+          <label for="modal-name">Your Name</label>
+          <input id="modal-name" name="Name" autocomplete="name" placeholder="Full name" minlength="2" maxlength="80" required />
+        </div>
+        <div class="field">
+          <label for="modal-phone">Phone Number</label>
+          <input id="modal-phone" type="tel" name="Phone" autocomplete="tel" inputmode="tel" placeholder="+91 00000 00000" maxlength="20" pattern="^(\+?[0-9\s\-()]{7,20})$" title="Please enter a valid phone number" required />
+        </div>
+        <div class="field full">
+          <label for="modal-email">Email Address</label>
+          <input id="modal-email" type="email" name="Email" autocomplete="email" placeholder="name@domain.com" maxlength="100" required />
+        </div>
+        <div class="field">
+          <label for="modal-city">Project Location</label>
+          <input id="modal-city" name="Location" placeholder="Neighbourhood / City (e.g. Worli, Alibaug)" maxlength="100" required />
+        </div>
+        <div class="field">
+          <label for="modal-scope">Discipline / Project Type</label>
+          <select id="modal-scope" name="Enquiry type">
+            <option>Exterior Architecture &amp; Masterplanning</option>
+            <option>Expert Plant Selection &amp; Nursery Visit</option>
+            <option>Vertical Living Green Wall</option>
+            <option>Terrace or Penthouse Sky Garden</option>
+            <option>Water Feature, Waterfall or Smart Irrigation</option>
+            <option>Country Estate / Farmhouse Grounds</option>
+            <option>Annual Horticultural Stewardship &amp; AMC</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="modal-message">About Your Space &amp; Requirements</label>
+          <textarea id="modal-message" name="Project details" rows="3" placeholder="Approximate area, current stage of construction or renovation, and design goals." maxlength="2000"></textarea>
+        </div>
+        <div class="field full consult-form-submit-row">
+          <button class="submit" type="submit">Submit Request</button>
+          <a class="whatsapp-contact" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20schedule%20a%20complimentary%20onsite%20consultation" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Prefer WhatsApp? Message directly</span>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Luxury Minimalist 3-Column Footer (Exact Match to Homepage) -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
+      <div class="footer-main-row">
+        <!-- Left: Standalone Botanical Emblem + Brief Summary -->
+        <div class="footer-brand-side">
+          <a class="footer-emblem-link" href="index.html" aria-label="Plantae World Home">
+            <img class="footer-flower-emblem" src="assets/brand/emblem-plantae-dark.png" alt="Plantae World Botanical Emblem" />
+          </a>
+          <p class="footer-about-text">
+            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1985.
+          </p>
+        </div>
+
+        <!-- Middle: Nav Links (Replicating Top Drawer Menu) -->
+        <nav class="footer-nav-middle" aria-label="Footer Navigation">
+          <a class="footer-nav-link" href="index.html">Home</a>
+          <a class="footer-nav-link" href="services.html">Services</a>
+          <a class="footer-nav-link" href="design-and-build.html">Design and Build</a>
+          <a class="footer-nav-link" href="selected-works.html">Projects</a>
+          <a class="footer-nav-link" href="plantae-luxe.html">Plantae Luxe Boutique</a>
+          <a class="footer-nav-link" href="about.html">About</a>
+          <a class="footer-nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Right: Social & Quick Contact -->
+        <div class="footer-actions-right">
+          <span class="footer-actions-label">Connect with Us</span>
+          <div class="footer-social-icons">
+            <a class="footer-icon-btn footer-btn-wa" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20enquire%20about%20a%20landscaping%20project" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a class="footer-icon-btn footer-btn-ig" href="https://www.instagram.com/plantae.world" target="_blank" rel="noopener noreferrer" aria-label="Follow Plantae World on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a class="footer-icon-btn footer-btn-fb" href="https://www.facebook.com/plantae.world" target="_blank" rel="noopener noreferrer" aria-label="Follow Plantae World on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+          <div class="footer-contact-quick">
+            <a href="tel:07400077765">07400077765</a>
+            <span>·</span>
+            <a href="mailto:shruti@plantaeworld.com">shruti@plantaeworld.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Location -->
+      <div class="footer-bottom-row">
+        <span class="footer-bottom-brand">Plantae World™</span>
+        <span class="footer-bottom-address">Studio: 32, New Kamani Chambers, Ballard Estate, Fort, Mumbai 400001</span>
+        <span class="footer-bottom-tagline">Landscapes for Living</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="nav.js?v=3.7"></script>
+  <script>
+    // Form Submission Handler for Consultation Modal via Web3Forms
+    (function() {
+      var modalForm = document.getElementById('consultationModalForm');
+      if (modalForm) {
+        modalForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var submitBtn = modalForm.querySelector('button[type="submit"]');
+          var originalText = submitBtn ? submitBtn.textContent : 'Submit Request';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting Request...';
+          }
+
+          var formData = new FormData(modalForm);
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            if (data.success) {
+              modalForm.reset();
+              if (submitBtn) {
+                submitBtn.textContent = 'Request Sent!';
+                submitBtn.style.background = '#243c28';
+              }
+              var card = modalForm.closest('.consult-modal-card');
+              if (card) {
+                var confirmation = document.createElement('div');
+                confirmation.className = 'consult-confirmation-view';
+                confirmation.style.cssText = 'padding: 40px 10px; text-align: center;';
+                confirmation.innerHTML = '<div style="width: 52px; height: 52px; border-radius: 50%; background: #eef6f0; color: #243c28; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><h3 style="font-family: var(--serif, Georgia, serif); font-size: 1.9rem; margin: 0 0 10px; color: #162619; font-weight: 500;">Consultation Request Received</h3><p style="font-size: 0.96rem; color: #4a5d4d; line-height: 1.6; max-width: 480px; margin: 0 auto 24px;">Thank you! Your project details have been received. Shruti and our principal landscape architects will review your space and be in touch within 24 hours.</p><div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;"><button type="button" class="button fill" onclick="closeConsultModal()" style="min-height: 44px; padding: 0 24px;">Close Window</button><a class="button glass" href="https://wa.me/917400077765?text=Hello%20Plantae%20World!%20I%20just%20submitted%20a%20site%20visit%20request%20on%20your%20website." target="_blank" rel="noopener noreferrer" style="min-height: 44px; padding: 0 22px; color: #162619; border-color: rgba(22,38,25,0.3);">Need Instant Reply? WhatsApp Us</a></div>';
+                modalForm.style.display = 'none';
+                card.appendChild(confirmation);
+              }
+            } else {
+              throw new Error(data.message || 'Submission failed');
+            }
+          })
+          .catch(function(err) {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            }
+            var errorBanner = modalForm.querySelector('.consult-error-banner');
+            if (!errorBanner) {
+              errorBanner = document.createElement('p');
+              errorBanner.className = 'consult-error-banner';
+              errorBanner.style.cssText = 'color: #a02b18; font-size: 0.85rem; margin-top: 12px; text-align: center; line-height: 1.5; width: 100%;';
+              modalForm.appendChild(errorBanner);
+            }
+            errorBanner.innerHTML = 'There was a network issue. Please message us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 600; color: inherit;">+91 74000 77765</a> or email <a href="mailto:shruti@plantaeworld.com" style="text-decoration: underline; color: inherit;">shruti@plantaeworld.com</a>.';
+          });
+        });
+      }
+    })();
+
+    // Mobile Carousel Controller with Hardware-Accelerated Snap and Dot Sync
+    (function initMobileCarousels() {
+      if (window.innerWidth > 900) return;
+
+      var carousels = document.querySelectorAll('[data-mobile-carousel]');
+      carousels.forEach(function(grid) {
+        var id = grid.id;
+        var nav = document.querySelector('.carousel-nav[data-carousel-for="' + id + '"]');
+        if (!nav) return;
+
+        var dots = nav.querySelectorAll('.carousel-dot');
+        var cards = grid.querySelectorAll('.service-card-item');
+        if (!cards.length) return;
+
+        var currentIndex = 0;
+        var isTouching = false;
+        var autoTimer = null;
+
+        function updateDots(idx) {
+          dots.forEach(function(d, i) {
+            if (i === idx) {
+              d.classList.add('active');
+            } else {
+              d.classList.remove('active');
+            }
+          });
+        }
+
+        function scrollToCard(idx) {
+          if (idx < 0) idx = 0;
+          if (idx >= cards.length) idx = cards.length - 1;
+          currentIndex = idx;
+          var targetCard = cards[idx];
+          if (targetCard) {
+            grid.scrollTo({
+              left: targetCard.offsetLeft - grid.offsetLeft,
+              behavior: 'smooth'
+            });
+          }
+          updateDots(idx);
+        }
+
+        dots.forEach(function(dot) {
+          dot.addEventListener('click', function() {
+            var idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
+            scrollToCard(idx);
+            resetAuto();
+          });
+        });
+
+        grid.addEventListener('scroll', function() {
+          var scrollLeft = grid.scrollLeft;
+          var cardWidth = grid.offsetWidth;
+          if (cardWidth > 0) {
+            var approxIndex = Math.round(scrollLeft / cardWidth);
+            if (approxIndex !== currentIndex && approxIndex >= 0 && approxIndex < cards.length) {
+              currentIndex = approxIndex;
+              updateDots(currentIndex);
+            }
+          }
+        }, { passive: true });
+
+        grid.addEventListener('touchstart', function() {
+          isTouching = true;
+          clearInterval(autoTimer);
+        }, { passive: true });
+
+        grid.addEventListener('touchend', function() {
+          isTouching = false;
+          resetAuto();
+        }, { passive: true });
+
+        function nextSlide() {
+          if (isTouching) return;
+          var next = (currentIndex + 1) % cards.length;
+          scrollToCard(next);
+        }
+
+        function resetAuto() {
+          clearInterval(autoTimer);
+          autoTimer = setInterval(nextSlide, 4500);
+        }
+
+        autoTimer = setInterval(nextSlide, 4500);
+      });
+    })();
+  </script>
+</body>
+</html>

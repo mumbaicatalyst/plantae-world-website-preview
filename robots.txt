@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# This site is a private demonstration. Do not index.

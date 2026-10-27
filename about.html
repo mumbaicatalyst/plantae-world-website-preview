@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="theme-color" content="#0b0f0c" />
+  <title>About Plantae World — Landscape Design Heritage Since 1985</title>
+  <meta name="description" content="Meet Plantae World, a Mumbai botanical design practice bringing horticulture, architecture, and long-term care together since 1985." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site-pages.css" />
+  <link rel="stylesheet" href="about.css?v=4.0" />
+  <link rel="stylesheet" href="nav-drawer.css?v=5.0" />
+
+  <link rel="canonical" href="https://plantaeworld.com/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Plantae World" />
+  <meta property="og:title" content="About Plantae World — Landscape Design Heritage Since 1985" />
+  <meta property="og:description" content="Meet Plantae World, a Mumbai botanical design practice bringing horticulture, architecture, and long-term care together since 1985." />
+  <meta property="og:url" content="https://plantaeworld.com/about.html" />
+  <meta property="og:image" content="https://plantaeworld.com/assets/images/plantae%20garden%201.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Plantae World — Landscape Design Heritage Since 1985" />
+  <meta name="twitter:description" content="Meet Plantae World, a Mumbai botanical design practice bringing horticulture, architecture, and long-term care together since 1985." />
+  <meta name="twitter:image" content="https://plantaeworld.com/assets/images/plantae%20garden%201.jpeg" />
+  <script>
+    // Bulletproof Navigation Drawer & Header Controller
+    function openNavDrawer() {
+      var d = document.getElementById('navDrawer');
+      var b = document.getElementById('navDrawerBackdrop');
+      var btn = document.getElementById('openNavDrawer');
+      if (d) {
+        d.classList.add('is-open');
+        d.setAttribute('aria-hidden', 'false');
+      }
+      if (b) {
+        b.classList.add('is-open');
+        b.setAttribute('aria-hidden', 'false');
+      }
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    window.openNavDrawer = openNavDrawer;
+
+    function closeNavDrawer() {
+      var d = document.getElementById('navDrawer');
+      var b = document.getElementById('navDrawerBackdrop');
+      var btn = document.getElementById('openNavDrawer');
+      if (d) {
+        d.classList.remove('is-open');
+        d.setAttribute('aria-hidden', 'true');
+      }
+      if (b) {
+        b.classList.remove('is-open');
+        b.setAttribute('aria-hidden', 'true');
+      }
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    window.closeNavDrawer = closeNavDrawer;
+
+    (function() {
+      function updateHeaderScroll() {
+        var h = document.getElementById('siteHeader') || document.querySelector('.site-header');
+        if (!h) return;
+        var y = window.scrollY || window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || (document.body && document.body.scrollTop) || 0;
+        if (y > 20) {
+          h.classList.add('is-scrolled');
+        } else {
+          h.classList.remove('is-scrolled');
+        }
+      }
+      window.addEventListener('scroll', updateHeaderScroll, { passive: true, capture: true });
+      document.addEventListener('scroll', updateHeaderScroll, { passive: true, capture: true });
+      window.addEventListener('wheel', function() { requestAnimationFrame(updateHeaderScroll); }, { passive: true });
+      window.addEventListener('touchmove', function() { requestAnimationFrame(updateHeaderScroll); }, { passive: true });
+      document.addEventListener('DOMContentLoaded', updateHeaderScroll);
+      window.addEventListener('load', updateHeaderScroll);
+      window.updateSiteHeaderScroll = updateHeaderScroll;
+    })();
+
+    // Early click delegation for menu buttons
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('#openNavDrawer, .header-menu-btn')) {
+        e.preventDefault();
+        openNavDrawer();
+      } else if (e.target.closest('#closeNavDrawer, .nav-drawer-close, #navDrawerBackdrop')) {
+        e.preventDefault();
+        closeNavDrawer();
+      }
+    }, true);
+  </script>
+</head>
+<body class="about-page">
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="Plantae World home">
+      <img class="brand-logo" src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
+    </a>
+
+    <div class="header-actions">
+      <a class="header-action-btn header-call-btn" href="tel:07400077765" aria-label="Call Plantae World 07400077765">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="header-action-btn header-wa-btn" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20enquire%20about%20a%20landscaping%20project" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      </a>
+      <button class="header-menu-btn" id="openNavDrawer" type="button" aria-expanded="false" aria-controls="navDrawer" aria-label="Open Navigation Menu" onclick="openNavDrawer()">
+        <span class="menu-icon-lines" aria-hidden="true">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Drawer Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop" aria-hidden="true" onclick="closeNavDrawer()"></div>
+
+  <!-- Off-Canvas Luxury Slide-in Drawer -->
+  <aside class="nav-drawer" id="navDrawer" aria-label="Site Navigation" aria-hidden="true">
+    <div class="nav-drawer-header">
+      <a class="nav-drawer-brand" href="index.html" aria-label="Plantae World">
+        <img src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
+      </a>
+      <button class="nav-drawer-close" id="closeNavDrawer" type="button" aria-label="Close navigation menu" onclick="closeNavDrawer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-drawer-body">
+      <nav class="drawer-nav-list" aria-label="Drawer Navigation">
+        <a class="drawer-nav-link" href="index.html">
+          <span class="drawer-link-text">Home</span>
+        </a>
+        <a class="drawer-nav-link" href="services.html">
+          <span class="drawer-link-text">Services</span>
+        </a>
+        <a class="drawer-nav-link" href="design-and-build.html">
+          <span class="drawer-link-text">Design and Build</span>
+        </a>
+        <a class="drawer-nav-link" href="selected-works.html">
+          <span class="drawer-link-text">Projects</span>
+        </a>
+        <a class="drawer-nav-link" href="plantae-luxe.html">
+          <span class="drawer-link-text">Plantae Luxe Boutique</span>
+        </a>
+        <a class="drawer-nav-link is-active" href="about.html">
+          <span class="drawer-link-text">About</span>
+        </a>
+        <a class="drawer-nav-link" href="contact.html">
+          <span class="drawer-link-text">Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="nav-drawer-footer">
+      <div class="drawer-contact-block">
+        <p class="drawer-block-title">Studio & Consultation</p>
+        <address class="drawer-address">
+          32, New Kamani Chambers, Adi Marzaban Path,<br>
+          Ballard Estate, Fort, Mumbai 400001
+        </address>
+
+        <div class="drawer-contact-links">
+          <div class="drawer-phone-wa-row">
+            <a class="drawer-contact-link" href="tel:07400077765" aria-label="Call 07400077765">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>07400077765</span>
+            </a>
+            <span class="drawer-divider">·</span>
+            <a class="drawer-contact-link" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20enquire%20about%20a%20landscaping%20project" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 07400077765">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+          <a class="drawer-contact-link" href="mailto:shruti@plantaeworld.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>shruti@plantaeworld.com</span>
+          </a>
+        </div>
+      </div>
+      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Book Consultation</button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="page-hero about-hero" aria-labelledby="about-title">
+      <div class="page-hero-copy about-hero-copy">
+        <p class="eyebrow">ABOUT PLANTAE WORLD · HERITAGE SINCE 1985</p>
+        <h1 class="about-hero-title" id="about-title">A Life in<br /><em>Living Landscapes.</em></h1>
+        <p class="about-hero-desc">For four decades, Plantae has worked where horticulture and architecture meet—designing landscapes for the way people live.</p>
+        <div class="about-hero-actions">
+          <a class="button fill" href="contact.html#enquire">Begin a Conversation</a>
+          <a class="button glass" href="tel:07400077765">Call 07400077765</a>
+        </div>
+      </div>
+      <div class="page-hero-media about-video"><div class="about-video-frame">
+        <video src="assets/images/plantae-shruti-video1.mp4" muted autoplay loop playsinline preload="metadata" aria-label="Plantae World design process"></video>
+      </div></div>
+    </section>
+
+    <section class="history" aria-labelledby="history-title">
+      <div class="history-side">
+        <h2 class="history-copy" id="history-title">Grown from<br />deep <em>roots.</em></h2>
+        <div class="history-illustration-wrap">
+          <img class="history-illustration" src="assets/images/plant-roots-illustration.png" alt="Botanical plant illustration with deep root system" width="300" height="225" loading="lazy" />
+        </div>
+      </div>
+      <div class="history-text">
+        <p>Plantae World carries forward a heritage that began in Mumbai in 1983 with Parasnath Enterprises. What started as a dedicated horticultural enterprise became a private wholesale nursery in 1985, establishing the botanical knowledge and material discipline that still grounds the studio today.</p>
+        <p>Also established in 1985, Plantae brought that living expertise into landscape architecture and urban consultation. Today, every commission is approached as a complete environment: shaped by climate, architecture, proportion, and the life that will unfold within it.</p>
+      </div>
+    </section>
+
+
+    <section class="shruti" aria-labelledby="shruti-title">
+      <div class="shruti-copy">
+        <p class="kicker">Owner &amp; Lead Designer</p>
+        <h2 class="section-title" id="shruti-title">Shruti Sanghvi brings a designer’s eye, grounded in horticulture.</h2>
+        <p class="lede">Her work begins with a simple belief: a landscape should suit its place—its light, materials, seasons, and the way it is used.</p>
+        <a class="text-link" href="contact.html#enquire">Begin a conversation</a>
+      </div>
+      <div class="shruti-video">
+        <video src="assets/images/owner_lanscape_design_process.mp4" controls playsinline preload="metadata" aria-label="Shruti Sanghvi speaking about her landscape design philosophy"></video>
+      </div>
+    </section>
+
+    <section class="values" aria-labelledby="values-title">
+      <p class="kicker">The Plantae approach</p>
+      <h2 class="section-title" id="values-title">Designed for the<br /><em>long view.</em></h2>
+      <div class="value-grid">
+        <article><b>01 / SITE FIRST</b><h2>Every place has a language.</h2><p>Light, wind, architecture, and routines inform the landscape before a single species is selected.</p></article>
+        <article><b>02 / BOTANICAL INTELLIGENCE</b><h2>Beauty made resilient.</h2><p>Planting is selected for local conditions, maturity, and the changes of season.</p></article>
+        <article><b>03 / LASTING CARE</b><h2>Made to keep evolving.</h2><p>Ongoing care protects the original design as the landscape grows and changes.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Luxury Minimalist 3-Column Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
+      <div class="footer-main-row">
+        <!-- Left: Standalone Botanical Emblem + Brief Summary -->
+        <div class="footer-brand-side">
+          <a class="footer-emblem-link" href="index.html" aria-label="Plantae World Home">
+            <img class="footer-flower-emblem" src="assets/brand/emblem-plantae-dark.png" alt="Plantae World Botanical Emblem" />
+          </a>
+          <p class="footer-about-text">
+            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1985.
+          </p>
+        </div>
+
+        <!-- Middle: Nav Links (Replicating Top Drawer Menu) -->
+        <nav class="footer-nav-middle" aria-label="Footer Navigation">
+          <a class="footer-nav-link" href="index.html">Home</a>
+          <a class="footer-nav-link" href="services.html">Services</a>
+          <a class="footer-nav-link" href="design-and-build.html">Design and Build</a>
+          <a class="footer-nav-link" href="selected-works.html">Projects</a>
+          <a class="footer-nav-link" href="plantae-luxe.html">Plantae Luxe Boutique</a>
+          <a class="footer-nav-link" href="about.html">About</a>
+          <a class="footer-nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Right: Social & Quick Contact -->
+        <div class="footer-actions-right">
+          <span class="footer-actions-label">Connect with Us</span>
+          <div class="footer-social-icons">
+            <a class="footer-icon-btn footer-btn-wa" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20enquire%20about%20a%20landscaping%20project" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a class="footer-icon-btn footer-btn-ig" href="https://www.instagram.com/plantae.world" target="_blank" rel="noopener noreferrer" aria-label="Follow Plantae World on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a class="footer-icon-btn footer-btn-fb" href="https://www.facebook.com/plantae.world" target="_blank" rel="noopener noreferrer" aria-label="Follow Plantae World on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+          <div class="footer-contact-quick">
+            <a href="tel:07400077765">07400077765</a>
+            <span>·</span>
+            <a href="mailto:shruti@plantaeworld.com">shruti@plantaeworld.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Location -->
+      <div class="footer-bottom-row">
+        <span class="footer-bottom-brand">Plantae World™</span>
+        <span class="footer-bottom-address">Studio: 32, New Kamani Chambers, Ballard Estate, Fort, Mumbai 400001</span>
+        <span class="footer-bottom-tagline">Landscapes for Living</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets-map.js"></script>
+  <script src="site-pages.js?v=4.0"></script>
+  <script src="nav.js?v=3.7"></script>
+</body>
+</html>

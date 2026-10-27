@@ -1,0 +1,1011 @@
+/* ==========================================================================
+   Plantae World — Services Page Stylesheet (services.css)
+   Luxury Architectural Landscaping, Living Systems, Irrigation & Stewardship
+   ========================================================================== */
+
+:root {
+  --white: #ffffff;
+  --cream: #dfcfab;
+  --cream-soft: #ede4ce;
+  --cream-card: #f8f5eb;
+  --cream-deep: #ceb88d;
+  --leaf: #243c28;
+  --leaf-deep: #162619;
+  --leaf-dark: #0f1c11;
+  --leaf-soft: #314d36;
+  --leaf-light: rgba(36, 60, 40, 0.08);
+  --ink: #162619;
+  --ink-soft: #243828;
+  --muted: #4a5d4d;
+  --bronze: #846124;
+  --bronze-light: #c5a059;
+  --line: rgba(36, 60, 40, 0.12);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.services-page {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Eliminate all underlines site-wide on services page */
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+body.services-page {
+  padding-top: 0 !important;
+}
+
+/* ==========================================================================
+   Header: Transparent at Top of Page, Solid Medium Dark Green on Scroll
+   (Identical to Homepage treatment)
+   ========================================================================== */
+body.services-page .site-header,
+html body.services-page .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 5vw, 80px);
+  height: 76px;
+  min-height: 76px;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  will-change: background-color, border-color, box-shadow;
+}
+
+body.services-page .site-header.is-scrolled,
+html body.services-page .site-header.is-scrolled {
+  background: #243c28 !important;
+  background-color: #243c28 !important; /* solid medium dark green */
+  border-bottom: 1px solid rgba(223, 207, 171, 0.16) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media (max-width: 680px) {
+  body.services-page .site-header,
+  html body.services-page .site-header,
+  body.services-page .site-header.is-scrolled,
+  html body.services-page .site-header.is-scrolled {
+    height: 60px;
+    min-height: 60px;
+    padding: 0 18px;
+  }
+}
+
+/* ==========================================================================
+   Hero Section: Full Bleed Photograph, Exact Typography Match to Homepage
+   ========================================================================== */
+.services-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 130px clamp(24px, 6vw, 100px) 70px;
+  background: var(--leaf-dark);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.services-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.services-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Less dim, vibrant photographic presence */
+  filter: brightness(0.92) contrast(1.05);
+  transform: scale(1.02);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Balanced gradient keeping background landscape architecture visible */
+  background: linear-gradient(
+    180deg,
+    rgba(15, 28, 17, 0.40) 0%,
+    rgba(15, 28, 17, 0.55) 55%,
+    rgba(15, 28, 17, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+/* Eyebrow: Exact Match to Homepage */
+.services-hero-content .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+  color: var(--cream);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.services-hero-content .eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1.5px;
+  background: currentColor;
+}
+
+/* Title: Exact Match to Homepage clamp(2.3rem, 4.2vw, 4rem) */
+.services-hero-title {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 4.2vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55);
+}
+
+.services-hero-title em {
+  font-style: italic;
+  color: var(--cream);
+}
+
+/* Description: Exact Match to Homepage clamp(1.02rem, 1.3vw, 1.15rem) */
+.services-hero-desc {
+  margin: 0 0 28px;
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  color: #f0f5f1;
+  line-height: 1.68;
+  max-width: 620px;
+  font-weight: 400;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.services-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+
+/* Matching Homepage button classes */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 26px;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: transform 0.25s, background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.fill {
+  background: var(--cream);
+  color: var(--leaf-deep);
+  border: 1px solid var(--cream);
+  box-shadow: 0 4px 14px rgba(36, 60, 40, 0.25);
+}
+
+.button.fill:hover {
+  background: #ffffff;
+  color: var(--leaf-deep);
+}
+
+.button.glass {
+  background: rgba(14, 26, 17, 0.55);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.button.glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Hero Section Anchor Links (Right on the Hero above the fold)
+   ========================================================================== */
+/* ==========================================================================
+   Hero Section Anchor Links (Single Row with Straight Pipe Dividers)
+   ========================================================================== */
+.hero-section-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(223, 207, 171, 0.22);
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.hero-nav-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  color: #ffffff;
+  text-decoration: none !important;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.anchor-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.anchor-arrow-icon {
+  stroke: var(--cream);
+  color: var(--cream);
+  opacity: 0.75;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  flex-shrink: 0;
+}
+
+.hero-nav-anchor:hover {
+  border-bottom-color: var(--cream);
+}
+
+.hero-nav-anchor:hover .anchor-arrow-icon {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+.anchor-pipe {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: rgba(223, 207, 171, 0.35);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Service Clusters Section Structure
+   ========================================================================== */
+.service-cluster {
+  padding: 85px clamp(20px, 5vw, 80px) 90px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.cluster-alt {
+  background: #fbfaf6;
+  max-width: 100%;
+  padding-left: clamp(20px, 5vw, 80px);
+  padding-right: clamp(20px, 5vw, 80px);
+}
+
+.cluster-alt > .cluster-head,
+.cluster-alt > .services-grid,
+.cluster-alt > .carousel-nav {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cluster-head {
+  max-width: 860px;
+  margin-bottom: 38px;
+}
+
+.cluster-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 6px;
+}
+
+.cluster-title {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 3.6vw, 3rem);
+  font-weight: 500;
+  color: var(--leaf-deep);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.cluster-title em {
+  font-style: italic;
+  color: var(--leaf);
+}
+
+.cluster-desc {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   Service Cards Grid (Desktop: 4 Columns with Uniform Alignment Baseline)
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card-item {
+  background: var(--cream-card);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(36, 60, 40, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  overflow: hidden;
+  border-radius: 4px;
+  height: 100%;
+}
+
+.service-card-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(36, 60, 40, 0.12);
+  border-color: var(--leaf);
+}
+
+.service-media-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--cream-card);
+  padding: 12px 12px 0 12px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.service-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid rgba(36, 60, 40, 0.08);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-card-item:hover .service-media-frame img {
+  transform: scale(1.05);
+}
+
+.service-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  padding: 4px 10px;
+  background: rgba(248, 245, 235, 0.95);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--leaf-deep);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px solid rgba(36, 60, 40, 0.2);
+  box-shadow: 0 4px 10px rgba(36, 60, 40, 0.06);
+}
+
+.service-body {
+  padding: 18px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Crisp, compact header zone: guarantees identical horizontal baseline */
+.service-body-top {
+  min-height: 82px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--leaf-deep);
+  line-height: 1.2;
+  min-height: 1.55rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.service-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  flex-grow: 1;
+}
+
+/* Precision Divider Line: Perfectly aligned across every card in the row */
+.service-body-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+  margin: 12px 0;
+  flex-shrink: 0;
+}
+
+/* 2-Bullet Features List: Starts at the exact same vertical baseline across all cards */
+.service-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 44px;
+}
+
+.service-highlights li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.74rem;
+  color: #243828;
+  line-height: 1.4;
+}
+
+.service-highlights li:before {
+  content: "•";
+  color: var(--bronze);
+  font-size: 1rem;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Rotating Carousel Controls (Mobile)
+   ========================================================================== */
+.carousel-nav {
+  display: none;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 24px;
+  height: 3px;
+  background: rgba(36, 60, 40, 0.2);
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  width: 36px;
+  background: var(--leaf);
+}
+
+/* ==========================================================================
+   Complimentary Site Visit & Consultation Banner
+   ========================================================================== */
+.consultation-cta-banner {
+  background: #162619;
+  color: #ffffff;
+  padding: 68px clamp(20px, 5vw, 80px);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(223, 207, 171, 0.16);
+}
+
+.consultation-cta-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  background: radial-gradient(circle at 80% 50%, rgba(223, 207, 171, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-banner-text {
+  max-width: 740px;
+}
+
+.cta-banner-kicker {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.cta-banner-title {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.cta-banner-desc {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #d6e0d8;
+  line-height: 1.65;
+}
+
+.cta-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.btn-banner-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 28px;
+  background: var(--cream);
+  color: var(--leaf-deep);
+  border: 1px solid var(--cream);
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.btn-banner-primary:hover {
+  background: #ffffff;
+  color: var(--leaf-deep);
+  transform: translateY(-2px);
+}
+
+.btn-banner-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 26px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+
+.btn-banner-wa:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-banner-wa svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   Consultation Modal Dialog Card (Matching contact.html Form Styling)
+   ========================================================================== */
+.consult-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 18, 12, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.consult-modal-backdrop.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.consult-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.consult-modal.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.consult-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #ffffff;
+  border: 1px solid rgba(36, 60, 40, 0.18);
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  padding: clamp(28px, 4vw, 42px);
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.consult-modal.is-open .consult-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.consult-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--leaf-deep);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.consult-modal-close:hover {
+  background: rgba(36, 60, 40, 0.08);
+  transform: scale(1.1);
+}
+
+.consult-modal-header {
+  margin-bottom: 24px;
+  padding-right: 32px;
+}
+
+.consult-modal-header .kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin: 0 0 6px;
+}
+
+.consult-modal-title {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+  font-weight: 500;
+  color: var(--leaf-deep);
+  line-height: 1.15;
+}
+
+.consult-modal-title em {
+  font-style: italic;
+  color: var(--leaf);
+}
+
+.consult-modal-subtitle {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Modal Form Styles: Harmonized with contact.html */
+.consult-modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.consult-modal-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.consult-modal-form .field.full {
+  grid-column: 1 / -1;
+}
+
+.consult-modal-form label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--leaf-deep);
+}
+
+.consult-modal-form input,
+.consult-modal-form select,
+.consult-modal-form textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid rgba(36, 60, 40, 0.22);
+  border-radius: 2px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-family: var(--sans);
+  transition: border-color 0.2s ease, outline 0.2s ease;
+}
+
+.consult-modal-form input:focus,
+.consult-modal-form select:focus,
+.consult-modal-form textarea:focus {
+  outline: 2px solid var(--leaf);
+  border-color: var(--leaf);
+}
+
+.consult-modal-form textarea {
+  resize: vertical;
+}
+
+.consult-form-submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.consult-modal-form .submit {
+  width: max-content;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 1px solid var(--leaf);
+  background: var(--leaf);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.consult-modal-form .submit:hover {
+  background: var(--leaf-deep);
+  color: #ffffff;
+}
+
+.consult-modal-form .whatsapp-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--leaf);
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.consult-modal-form .whatsapp-contact:hover {
+  color: #128c7e;
+}
+
+/* ==========================================================================
+   Responsive Rules
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .services-hero {
+    padding: 110px 20px 60px;
+    min-height: auto;
+  }
+
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-section-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    white-space: normal;
+  }
+
+  .anchor-pipe {
+    display: none !important;
+  }
+
+  /* Single-Card Scroll-Snap Carousel for Mobile & iPad */
+  .services-grid[data-mobile-carousel] {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 8px 4px 14px !important;
+    margin-top: 14px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .services-grid[data-mobile-carousel]::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .services-grid[data-mobile-carousel] .service-card-item {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .services-hero-title {
+    font-size: clamp(1.85rem, 7.5vw, 2.35rem);
+  }
+
+  .services-hero-desc {
+    font-size: 0.96rem;
+  }
+
+  .services-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .services-hero-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-section-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cta-banner-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-banner-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cta-banner-actions .btn-banner-primary,
+  .cta-banner-actions .btn-banner-wa {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .consult-modal-form {
+    grid-template-columns: 1fr;
+  }
+
+  .consult-form-submit-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .consult-modal-form .submit {
+    width: 100%;
+    text-align: center;
+  }
+}

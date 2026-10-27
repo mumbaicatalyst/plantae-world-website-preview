@@ -1,0 +1,1437 @@
+/* ==========================================================================
+   Plantae World — Design & Build Journey Stylesheet (Triptych Portals)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Full-Bleed 100vh Hero with Integrated 3-Portal Triptych
+   -------------------------------------------------------------------------- */
+.db-hero-triptych {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--leaf-deep, #162619);
+  color: #ffffff;
+  padding: clamp(74px, 8.5vh, 92px) clamp(20px, 4vw, 56px) clamp(12px, 1.8vh, 20px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Subtle background botanical ambient vignette */
+.db-hero-triptych::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(36, 60, 40, 0.45) 0%, rgba(14, 26, 17, 0.95) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.db-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto clamp(8px, 1.4vh, 16px);
+  text-align: center;
+}
+
+.db-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream, #dfcfab);
+  margin: 0 0 8px;
+  line-height: 1;
+}
+
+.db-eyebrow-dash {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--cream, #dfcfab);
+  user-select: none;
+  transform: translateY(-1px);
+}
+
+.db-hero-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.db-hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cream, #dfcfab);
+}
+
+.db-hero-lede {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+/* --------------------------------------------------------------------------
+   3 Triptych Pillars (Desktop Core)
+   -------------------------------------------------------------------------- */
+.db-triptych-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  gap: clamp(12px, 1.4vw, 18px);
+  min-height: 280px;
+  max-height: clamp(300px, 46vh, 400px);
+}
+
+.db-triptych-portal {
+  position: relative;
+  flex: 1;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(223, 207, 171, 0.22);
+  background: #111e14;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  outline: none;
+  transition: flex 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.db-triptych-portal:hover {
+  border-color: rgba(223, 207, 171, 0.6);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+.db-triptych-portal.is-active {
+  flex: 1.45;
+  border-color: var(--cream, #dfcfab);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5);
+}
+
+/* Photo Backdrop */
+.db-portal-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  filter: brightness(0.68);
+}
+
+.db-triptych-portal:hover .db-portal-bg {
+  transform: scale(1.03);
+  filter: brightness(0.78);
+}
+
+.db-triptych-portal.is-active .db-portal-bg {
+  filter: brightness(0.85);
+}
+
+/* Scrim Gradient */
+.db-portal-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 26, 17, 0.1) 0%, rgba(14, 26, 17, 0.6) 55%, rgba(14, 26, 17, 0.94) 100%);
+  transition: opacity 0.3s ease;
+}
+
+/* Card Content Overlay */
+.db-portal-content {
+  position: relative;
+  z-index: 3;
+  padding: clamp(20px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.db-portal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.db-portal-tag {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream, #dfcfab);
+}
+
+.db-portal-status {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(223, 207, 171, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  color: var(--cream, #dfcfab);
+  background: rgba(14, 26, 17, 0.4);
+}
+
+.db-portal-chevron {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.db-triptych-portal.is-active .db-portal-status {
+  border-color: var(--cream, #dfcfab);
+  background: var(--cream, #dfcfab);
+  color: var(--leaf-deep, #162619);
+}
+
+.db-triptych-portal.is-active .db-portal-chevron {
+  transform: translateY(2px);
+}
+
+.db-portal-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.db-portal-desc {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Explore Journey Button inside Active Portal */
+.db-portal-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--leaf-deep, #162619);
+  background: var(--cream, #dfcfab);
+  padding: 8px 18px;
+  border-radius: 2px;
+  width: fit-content;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.db-triptych-portal.is-active .db-portal-action {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.db-portal-action svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Scroll Cue Footer */
+.db-hero-scroll-cue {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: clamp(8px, 1.3vh, 14px);
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(223, 207, 171, 0.8);
+}
+
+.db-hero-scroll-cue svg {
+  width: 14px;
+  height: 14px;
+  animation: dbBounce 2s infinite ease-in-out;
+}
+
+@keyframes dbBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* --------------------------------------------------------------------------
+   Streamlined Journey Section (Below-the-fold)
+   -------------------------------------------------------------------------- */
+.db-process-section {
+  position: relative;
+  background: #ffffff;
+  padding: clamp(48px, 6vw, 76px) clamp(20px, 5vw, 72px);
+}
+
+.db-process-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Inline Track Switcher Tabs (Seamless Navigation from Anywhere)
+   -------------------------------------------------------------------------- */
+.db-track-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto clamp(36px, 4.5vw, 52px);
+  padding: 6px;
+  background: var(--cream-soft, #fbf8f1);
+  border: 1px solid var(--line, rgba(36, 60, 40, 0.12));
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.db-track-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s ease;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+}
+
+.db-track-tab:hover {
+  background: rgba(36, 60, 40, 0.04);
+}
+
+.db-track-tab.is-active {
+  background: var(--leaf-deep, #162619);
+  border-color: var(--leaf-deep, #162619);
+  box-shadow: 0 4px 14px rgba(22, 38, 25, 0.16);
+}
+
+.db-track-tab-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--bronze, #846124);
+  transition: color 0.2s ease;
+}
+
+.db-track-tab.is-active .db-track-tab-num {
+  color: var(--cream, #dfcfab);
+}
+
+.db-track-tab-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #2b3b2d;
+  transition: color 0.2s ease;
+}
+
+.db-track-tab.is-active .db-track-tab-name {
+  color: #ffffff;
+}
+
+.db-track-tab-count {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--muted, #4e5e51);
+  background: rgba(36, 60, 40, 0.08);
+  padding: 2px 8px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.db-track-tab.is-active .db-track-tab-count {
+  color: var(--cream, #dfcfab);
+  background: rgba(223, 207, 171, 0.2);
+}
+
+/* Mobile Sticky Progress Pill */
+.db-mobile-progress-bar {
+  display: none;
+  position: sticky;
+  top: 74px;
+  z-index: 25;
+  background: rgba(22, 38, 25, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.db-mobile-progress-text {
+  color: var(--cream, #dfcfab);
+}
+
+.db-mobile-progress-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.db-mobile-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.db-mobile-dot.is-active {
+  background: var(--cream, #dfcfab);
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* 2-Column Process Grid: Smart Sidebar (Left) + Compact Step Cards (Right) */
+.db-journey-grid {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: start;
+}
+
+/* Smart Accordion Sidebar (Desktop) */
+.db-sticky-sidebar {
+  position: sticky;
+  top: 96px;
+  background: var(--cream-soft, #fbf8f1);
+  border: 1px solid var(--line, rgba(36, 60, 40, 0.12));
+  border-radius: 6px;
+  padding: 24px 20px;
+}
+
+.db-sidebar-header {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line, rgba(36, 60, 40, 0.12));
+}
+
+.db-sidebar-kicker {
+  display: block;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze, #846124);
+  margin-bottom: 4px;
+}
+
+.db-sidebar-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--leaf-deep, #162619);
+  margin: 0;
+}
+
+.db-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Sidebar Item with Smooth Dynamic Accordion Expansion */
+.db-sidebar-link {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.db-sidebar-link:hover {
+  background: rgba(36, 60, 40, 0.05);
+}
+
+.db-sidebar-link.is-active {
+  background: var(--leaf-deep, #162619);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 38, 25, 0.15);
+}
+
+.db-sidebar-link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.db-sidebar-num {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(36, 60, 40, 0.1);
+  color: var(--leaf-deep, #162619);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.db-sidebar-link.is-active .db-sidebar-num {
+  background: var(--cream, #dfcfab);
+  color: var(--leaf-deep, #162619);
+}
+
+.db-sidebar-label {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #384c3c;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.db-sidebar-link.is-active .db-sidebar-label {
+  color: #ffffff;
+}
+
+/* Sidebar Accordion Summary (Only visible when step is active) */
+.db-sidebar-brief {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: rgba(223, 207, 171, 0.9);
+  margin: 6px 0 0 32px;
+  display: none;
+  animation: dbFadeIn 0.3s ease;
+}
+
+.db-sidebar-link.is-active .db-sidebar-brief {
+  display: block;
+}
+
+@keyframes dbFadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.db-sidebar-help {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line, rgba(36, 60, 40, 0.12));
+}
+
+.db-sidebar-help-text {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.76rem;
+  color: var(--muted, #4e5e51);
+  line-height: 1.45;
+  margin: 0 0 8px;
+}
+
+.db-sidebar-help-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(36, 60, 40, 0.32);
+  border-radius: 2px;
+  padding: 8px 14px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--leaf-deep, #162619);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.db-sidebar-help-btn:hover {
+  background: var(--leaf-deep, #162619);
+  color: #ffffff;
+  border-color: var(--leaf-deep, #162619);
+}
+
+/* --------------------------------------------------------------------------
+   Process Track Wrappers (Tight 2-line headers, no bloat)
+   -------------------------------------------------------------------------- */
+.db-process-track {
+  display: none;
+}
+
+.db-process-track.is-active {
+  display: block;
+}
+
+.db-track-intro {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line, rgba(36, 60, 40, 0.12));
+}
+
+.db-track-kicker {
+  display: block;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze, #846124);
+  margin-bottom: 4px;
+}
+
+.db-track-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.85rem, 2.8vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--leaf-deep, #162619);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Streamlined Horizontal Step Card (Fit in 1 Screen)
+   -------------------------------------------------------------------------- */
+.db-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 60px);
+}
+
+.db-step-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--line, rgba(36, 60, 40, 0.14));
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(36, 60, 40, 0.05);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  scroll-margin-top: 100px;
+}
+
+.db-step-card.js-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.db-step-card.js-reveal.is-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.db-step-card-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   Step Card Header (Stage Badge, Track Tag & Title)
+   -------------------------------------------------------------------------- */
+.db-step-header {
+  padding: clamp(12px, 1.6vw, 16px) clamp(20px, 2.8vw, 30px);
+  background: #ffffff;
+  border-bottom: 1px solid var(--line, rgba(36, 60, 40, 0.1));
+}
+
+.db-step-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.db-step-badge {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze, #846124);
+  background: rgba(132, 97, 36, 0.08);
+  padding: 3px 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.db-step-divider {
+  color: var(--line, rgba(36, 60, 40, 0.35));
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.db-step-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.35rem, 1.85vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--leaf-deep, #162619);
+  margin: 0;
+}
+
+/* Horizontal Photo Banner with Caption Tag */
+.db-step-media {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: clamp(280px, 32vw, 370px);
+  background: var(--cream, #dfcfab);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line, rgba(36, 60, 40, 0.1));
+}
+
+.db-step-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.db-step-card:hover .db-step-media img {
+  transform: scale(1.02);
+}
+
+.db-step-photo-tag {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 2;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream, #dfcfab);
+  background: rgba(14, 26, 17, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(223, 207, 171, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Minimal Step Body: Direct Role Distinction */
+.db-step-body {
+  padding: clamp(20px, 3vw, 28px) clamp(22px, 3vw, 32px) clamp(24px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile-only header (redundant now with .db-step-header, kept hidden safely) */
+.db-step-mobile-heading {
+  display: none !important;
+}
+
+/* What We Need From You vs What Plantae Does */
+.db-roles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.db-role-box {
+  background: var(--cream-soft, #fbf8f1);
+  padding: 16px 18px;
+  border-radius: 4px;
+  border-left: 3px solid var(--bronze, #846124);
+}
+
+.db-role-box.role-plantae {
+  border-left-color: var(--leaf, #243c28);
+  background: #f4f8f4;
+}
+
+.db-role-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.db-role-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.role-client .db-role-icon {
+  color: var(--bronze, #846124);
+}
+
+.role-plantae .db-role-icon {
+  color: var(--leaf, #243c28);
+}
+
+.db-role-label {
+  display: block;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted, #4e5e51);
+}
+
+.db-role-box.role-plantae .db-role-label {
+  color: var(--leaf, #243c28);
+}
+
+.db-role-text {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #2b3b2d;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Section 3: The Plantae Turnkey Standard (Assurance Grid)
+   -------------------------------------------------------------------------- */
+.db-assurance-section {
+  position: relative;
+  background: var(--leaf-deep, #162619);
+  color: #ffffff;
+  padding: clamp(64px, 8vw, 100px) clamp(20px, 5vw, 72px);
+  overflow: hidden;
+}
+
+.db-assurance-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 10%, rgba(36, 60, 40, 0.45) 0%, rgba(14, 26, 17, 0.95) 100%);
+  pointer-events: none;
+}
+
+.db-assurance-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.db-assurance-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto clamp(36px, 5vw, 56px);
+}
+
+.db-assurance-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream, #dfcfab);
+  margin-bottom: 12px;
+}
+
+.db-assurance-kicker::before,
+.db-assurance-kicker::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--cream, #dfcfab);
+}
+
+.db-assurance-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.db-assurance-lead {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.84);
+  margin: 0 auto;
+}
+
+.db-assurance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(18px, 2.5vw, 26px);
+}
+
+.db-assurance-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(223, 207, 171, 0.18);
+  border-radius: 6px;
+  padding: clamp(24px, 3vw, 32px) clamp(20px, 2.5vw, 26px);
+  transition: transform 0.35s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.db-assurance-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(223, 207, 171, 0.5);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+
+.db-assurance-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(223, 207, 171, 0.12);
+  border: 1px solid rgba(223, 207, 171, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--cream, #dfcfab);
+}
+
+.db-assurance-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
+.db-assurance-card-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.db-assurance-card-desc {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.76);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Section 4: Service Scope Comparison Matrix
+   -------------------------------------------------------------------------- */
+.db-comparison-section {
+  position: relative;
+  background: #ffffff;
+  padding: clamp(64px, 8vw, 96px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid var(--line, rgba(36, 60, 40, 0.1));
+}
+
+.db-comparison-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.db-comparison-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(32px, 4vw, 48px);
+}
+
+.db-comparison-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze, #846124);
+  margin-bottom: 10px;
+}
+
+.db-comparison-kicker::before,
+.db-comparison-kicker::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--bronze, #846124);
+}
+
+.db-comparison-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--leaf-deep, #162619);
+  margin: 0 0 14px;
+}
+
+.db-comparison-lead {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--muted, #4e5e51);
+  margin: 0 auto;
+}
+
+.db-table-scroll-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line, rgba(36, 60, 40, 0.14));
+  border-radius: 6px;
+  box-shadow: 0 4px 18px rgba(36, 60, 40, 0.04);
+  background: #ffffff;
+}
+
+.db-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  text-align: left;
+}
+
+.db-comparison-table th,
+.db-comparison-table td {
+  padding: 18px 22px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  border-bottom: 1px solid var(--line, rgba(36, 60, 40, 0.08));
+  vertical-align: middle;
+}
+
+.db-comparison-table thead th {
+  background: var(--cream-soft, #fbf8f1);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--leaf-deep, #162619);
+  border-bottom: 2px solid var(--line, rgba(36, 60, 40, 0.15));
+}
+
+.db-comparison-table tbody th[scope="row"] {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted, #4e5e51);
+  background: rgba(36, 60, 40, 0.02);
+  width: 180px;
+}
+
+.db-comparison-table .is-highlighted {
+  background: rgba(22, 38, 25, 0.04);
+  font-weight: 500;
+}
+
+.db-comparison-table thead th.is-highlighted {
+  background: var(--leaf-deep, #162619);
+  color: var(--cream, #dfcfab);
+}
+
+.db-matrix-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--cream-soft, #fbf8f1);
+  border: 1px solid var(--line, rgba(36, 60, 40, 0.2));
+  color: var(--leaf-deep, #162619);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.db-matrix-btn:hover {
+  background: var(--leaf-deep, #162619);
+  color: #ffffff;
+  border-color: var(--leaf-deep, #162619);
+}
+
+.db-matrix-btn.is-primary {
+  background: var(--leaf-deep, #162619);
+  color: var(--cream, #dfcfab);
+  border-color: var(--leaf-deep, #162619);
+}
+
+.db-matrix-btn.is-primary:hover {
+  background: var(--leaf, #243c28);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Section 5: Final Call To Action (Enquiry Invitation)
+   -------------------------------------------------------------------------- */
+.db-closing-section {
+  position: relative;
+  background: var(--cream, #dfcfab);
+  padding: clamp(60px, 7vw, 90px) clamp(24px, 5vw, 80px);
+  border-top: 1px solid var(--line, rgba(36, 60, 40, 0.12));
+}
+
+.db-closing-container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.db-closing-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--leaf-deep, #162619);
+  margin: 0 0 14px;
+}
+
+.db-closing-kicker::before,
+.db-closing-kicker::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--leaf-deep, #162619);
+}
+
+.db-closing-title {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--leaf-deep, #162619);
+  margin: 0 0 16px;
+}
+
+.db-closing-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.db-closing-lead {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.68;
+  color: #2e4031;
+  max-width: 680px;
+  margin: 0 auto 32px;
+}
+
+.db-closing-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.db-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 30px;
+  border-radius: 2px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.db-btn-primary {
+  background: var(--leaf-deep, #162619);
+  color: #ffffff;
+  border: 1px solid var(--leaf-deep, #162619);
+}
+
+.db-btn-primary:hover {
+  background: var(--leaf, #243c28);
+  border-color: var(--leaf, #243c28);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(22, 38, 25, 0.2);
+}
+
+.db-btn-wa {
+  background: transparent;
+  color: var(--leaf-deep, #162619);
+  border: 1.5px solid var(--leaf-deep, #162619);
+  gap: 8px;
+}
+
+.db-btn-wa:hover {
+  background: rgba(22, 38, 25, 0.08);
+  transform: translateY(-2px);
+}
+
+.db-btn-wa svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+.db-btn-call {
+  background: transparent;
+  color: var(--leaf-deep, #162619);
+  border: 1.5px solid var(--leaf-deep, #162619);
+  gap: 8px;
+}
+
+.db-btn-call:hover {
+  background: rgba(22, 38, 25, 0.08);
+  transform: translateY(-2px);
+}
+
+.db-btn-call svg {
+  width: 17px;
+  height: 17px;
+}
+
+.db-closing-reassurance {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 36px);
+  flex-wrap: wrap;
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(22, 38, 25, 0.12);
+}
+
+.db-reassurance-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--leaf-deep, #162619);
+}
+
+.db-reassurance-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--bronze, #846124);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints: Mobile Stacked Accordion & Layout Transformation
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .db-hero-triptych {
+    min-height: auto;
+    padding: 100px 20px 32px;
+  }
+
+  /* Transform 3 Columns into Stacked Mobile Accordion Cards */
+  .db-triptych-container {
+    flex-direction: column;
+    min-height: auto;
+    max-height: none;
+    gap: 12px;
+  }
+
+  .db-triptych-portal {
+    flex: none !important;
+    height: 74px;
+    transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+
+  .db-triptych-portal.is-active {
+    height: 220px;
+  }
+
+  .db-portal-content {
+    padding: 14px 18px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .db-triptych-portal.is-active .db-portal-content {
+    justify-content: flex-end;
+  }
+
+  .db-portal-top {
+    margin-bottom: 4px;
+  }
+
+  .db-portal-title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .db-portal-desc {
+    display: none;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 6px 0 12px;
+  }
+
+  .db-triptych-portal.is-active .db-portal-desc {
+    display: -webkit-box;
+  }
+
+  .db-portal-action {
+    display: none;
+  }
+
+  .db-triptych-portal.is-active .db-portal-action {
+    display: inline-flex;
+    padding: 7px 16px;
+    font-size: 0.7rem;
+  }
+
+  /* Inline Track Tabs on Mobile */
+  .db-track-nav-bar {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 6px;
+    box-sizing: border-box;
+    scrollbar-width: none;
+  }
+
+  .db-track-nav-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .db-track-tab {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+
+  /* Journey Section on Mobile */
+  .db-journey-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .db-sticky-sidebar {
+    display: none;
+  }
+
+  .db-mobile-progress-bar {
+    display: flex;
+  }
+
+  .db-step-media {
+    min-height: 240px;
+    max-height: 320px;
+    height: clamp(240px, 45vw, 320px);
+  }
+
+  .db-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .db-assurance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .db-assurance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .db-closing-reassurance {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .db-closing-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .db-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .db-step-card.js-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .db-hero-scroll-cue svg {
+    animation: none !important;
+  }
+  .db-triptych-portal {
+    transition: none !important;
+  }
+}

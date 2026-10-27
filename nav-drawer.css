@@ -1,0 +1,1088 @@
+/* ==========================================================================
+   Plantae World — Luxury Minimalist Header, Drawer & Site Footer Foundation
+   ========================================================================== */
+
+:root {
+  --leaf: #243c28;
+  --leaf-deep: #162619;
+  --leaf-light: #385a3e;
+  --cream: #dfcfab;
+  --cream-soft: #f7f3e8;
+  --cream-card: #f7f3e8;
+  --cream-muted: #ede5d5;
+  --ink: #162619;
+  --muted: #4e5e51;
+  --bronze: #846124;
+  --line: rgba(36, 60, 40, 0.12);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+/* Inner pages offset for fixed header (excluded on pages with full-bleed hero photos) */
+body:not(.homepage):not(.services-page):not(.portfolio-page):not(.has-hero-trans-header) {
+  padding-top: 76px;
+}
+
+@media (max-width: 680px) {
+  body:not(.homepage):not(.services-page):not(.portfolio-page):not(.has-hero-trans-header) {
+    padding-top: 60px;
+  }
+}
+
+/* Inner pages without full-bleed hero get solid header for crisp contrast against light hero backgrounds */
+body:not(.homepage):not(.services-page):not(.portfolio-page):not(.has-hero-trans-header) .site-header,
+html body:not(.homepage):not(.services-page):not(.portfolio-page):not(.has-hero-trans-header) .site-header {
+  background: #243c28 !important;
+  background-color: #243c28 !important;
+  border-bottom: 1px solid rgba(223, 207, 171, 0.16) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Site Header: Transparent at Top of Page, Solid Green on Scroll (Homepage)
+   Preserves identical layout and sizing; text/icon colors do not change
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 5vw, 80px);
+  background: rgba(36, 60, 40, 0);
+  background-color: rgba(36, 60, 40, 0);
+  border-bottom: 1px solid rgba(223, 207, 171, 0);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  will-change: background-color, border-color, box-shadow;
+  pointer-events: auto;
+}
+
+/* Scrolled Header State: Solid Medium Dark Green Background */
+html body .site-header.is-scrolled,
+.site-header.is-scrolled {
+  background: #243c28;
+  background-color: #243c28; /* solid medium dark green */
+  border-bottom: 1px solid rgba(223, 207, 171, 0.16);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+  /* Preserves exact same layout and sizing */
+  height: 76px;
+  min-height: 76px;
+  padding: 0 clamp(24px, 5vw, 80px);
+}
+
+/* --------------------------------------------------------------------------
+   Brand Logo: Pure Floating Logo
+   -------------------------------------------------------------------------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.brand-logo {
+  height: 38px;
+  width: auto;
+  max-width: 190px;
+  flex: none;
+  object-fit: contain;
+  /* Crisp white logo with soft drop shadow */
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.55));
+  transition: transform 0.25s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.02);
+}
+
+/* Logo remains unchanged on scroll */
+.site-header.is-scrolled .brand-logo {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35)) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Header Actions Container (Right Side)
+   -------------------------------------------------------------------------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 24px);
+  margin-left: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Communication Action Buttons (Phone & WhatsApp Icons)
+   Same color, stroke weight, dimensions, and hover states
+   -------------------------------------------------------------------------- */
+.header-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 6px !important;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.header-action-btn svg {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: stroke 0.25s ease, fill 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+/* Call Button Stroke */
+.header-call-btn svg {
+  stroke: #ffffff;
+  stroke-width: 2.2;
+}
+
+/* WhatsApp Button Fill */
+.header-wa-btn svg {
+  fill: #ffffff;
+}
+
+.header-action-btn:hover {
+  transform: scale(1.12);
+}
+
+.header-call-btn:hover svg {
+  stroke: var(--cream, #dfcfab);
+}
+
+.header-wa-btn:hover svg {
+  fill: var(--cream, #dfcfab);
+}
+
+/* In scrolled state: icons preserve identical color and sizing */
+.site-header.is-scrolled .header-action-btn {
+  color: #ffffff;
+}
+
+.site-header.is-scrolled .header-call-btn svg {
+  stroke: #ffffff;
+}
+
+.site-header.is-scrolled .header-wa-btn svg {
+  fill: #ffffff;
+}
+
+.site-header.is-scrolled .header-call-btn:hover svg {
+  stroke: var(--cream, #dfcfab);
+}
+
+.site-header.is-scrolled .header-wa-btn:hover svg {
+  fill: var(--cream, #dfcfab);
+}
+
+/* --------------------------------------------------------------------------
+   Menu Hamburger: Sleek 3-Line Icon (No Round/Circle, No Box Background)
+   -------------------------------------------------------------------------- */
+.header-menu-btn {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 8px 4px !important;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.menu-icon-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 28px;
+}
+
+.menu-icon-lines .line {
+  display: block;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, background-color 0.25s ease, width 0.25s ease;
+}
+
+.menu-icon-lines .line-1 {
+  width: 28px;
+}
+
+.menu-icon-lines .line-2 {
+  width: 20px;
+}
+
+.menu-icon-lines .line-3 {
+  width: 28px;
+}
+
+.header-menu-btn:hover .menu-icon-lines .line-2 {
+  width: 28px;
+}
+
+.header-menu-btn:hover .menu-icon-lines .line {
+  background: var(--cream, #dfcfab);
+}
+
+/* In scrolled state: lines remain pure white on green background */
+.site-header.is-scrolled .menu-icon-lines .line {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.site-header.is-scrolled .header-menu-btn:hover .menu-icon-lines .line {
+  background: var(--cream, #dfcfab);
+}
+
+/* ==========================================================================
+   Slide-in Off-Canvas Navigation Drawer (Inspired by Rosebank & Luxury Studios)
+   ========================================================================== */
+.nav-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(10, 18, 12, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+  pointer-events: none;
+}
+
+.nav-drawer-backdrop.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(375px, 88vw);
+  z-index: 1000;
+  background: var(--leaf, #243c28);
+  color: #ffffff;
+  border-left: 1px solid rgba(223, 207, 171, 0.22);
+  box-shadow: -16px 0 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-drawer.is-open {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Drawer Header */
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 26px 14px;
+  border-bottom: 1px solid rgba(223, 207, 171, 0.16);
+}
+
+.nav-drawer-brand img {
+  height: 28px;
+  width: auto;
+  filter: none;
+}
+
+.nav-drawer-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.nav-drawer-close:hover {
+  background: rgba(223, 207, 171, 0.18);
+  color: var(--cream, #dfcfab);
+  border-color: var(--cream, #dfcfab);
+  transform: rotate(90deg);
+}
+
+/* Drawer Body (Natural content height, aligned to top) */
+.nav-drawer-body {
+  flex: 0 0 auto;
+  padding: 28px 28px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  position: relative;
+  width: fit-content;
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
+}
+
+.drawer-link-text {
+  font-family: var(--sans);
+  font-size: clamp(0.96rem, 1.25vw, 1.14rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.drawer-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--cream, #dfcfab);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-nav-link:hover .drawer-link-text {
+  color: var(--cream, #dfcfab);
+  transform: translateX(4px);
+}
+
+.drawer-nav-link:hover::after,
+.drawer-nav-link.is-active::after {
+  width: 100%;
+}
+
+.drawer-nav-link.is-active .drawer-link-text {
+  color: var(--cream, #dfcfab);
+}
+
+/* Drawer Footer (Spacious, breathable address & contact block) */
+.nav-drawer-footer {
+  padding: 30px 28px 36px;
+  background: rgba(0, 0, 0, 0.14);
+  border-top: 1px solid rgba(223, 207, 171, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: auto;
+}
+
+.drawer-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.drawer-block-title {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream, #dfcfab);
+}
+
+.drawer-address {
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.drawer-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 4px;
+}
+
+.drawer-phone-wa-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.drawer-divider {
+  color: rgba(223, 207, 171, 0.5);
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.drawer-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.drawer-contact-link svg {
+  width: 16px;
+  height: 16px;
+  color: var(--cream, #dfcfab);
+  flex: none;
+}
+
+.drawer-contact-link:hover {
+  color: var(--cream, #dfcfab);
+  transform: translateX(3px);
+}
+
+.drawer-contact-link:hover svg {
+  color: #ffffff;
+}
+
+.drawer-quote-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 2px;
+  background: var(--cream, #dfcfab);
+  border: 1px solid var(--cream, #dfcfab);
+  color: var(--leaf-deep, #162619);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  margin-top: 4px;
+}
+
+.drawer-quote-btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--leaf-deep, #162619);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* Very Short Viewport Height Optimization (Small Display Panels) */
+@media (max-height: 720px) {
+  .nav-drawer-header {
+    padding: 14px 24px 10px;
+  }
+  .nav-drawer-body {
+    padding: 16px 24px 10px;
+  }
+  .drawer-nav-list {
+    gap: 9px;
+  }
+  .drawer-link-text {
+    font-size: 0.88rem;
+  }
+  .nav-drawer-footer {
+    padding: 14px 24px 18px;
+    gap: 10px;
+  }
+  .drawer-contact-block {
+    gap: 5px;
+  }
+  .drawer-address {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+  .drawer-contact-links {
+    gap: 6px;
+  }
+  .drawer-contact-link {
+    font-size: 0.78rem;
+  }
+  .drawer-quote-btn {
+    min-height: 40px;
+    font-size: 0.72rem;
+  }
+}
+
+/* Hide floating sticky WhatsApp button */
+.whatsapp-sticky {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Mobile Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 680px) {
+  html body .site-header,
+  .site-header {
+    height: 60px;
+    min-height: 60px;
+    padding: 0 18px;
+  }
+  html body .site-header.is-scrolled,
+  .site-header.is-scrolled {
+    height: 60px;
+    min-height: 60px;
+    padding: 0 18px;
+  }
+  .brand-logo {
+    height: 30px;
+    max-width: 130px;
+  }
+  .header-actions {
+    gap: 14px;
+  }
+  .header-action-btn svg {
+    width: 19px;
+    height: 19px;
+  }
+  .menu-icon-lines {
+    width: 24px;
+    gap: 5px;
+  }
+  .menu-icon-lines .line-1 {
+    width: 24px;
+  }
+  .menu-icon-lines .line-2 {
+    width: 16px;
+  }
+  .menu-icon-lines .line-3 {
+    width: 24px;
+  }
+  .nav-drawer {
+    width: 100vw;
+  }
+  .nav-drawer-header,
+  .nav-drawer-body,
+  .nav-drawer-footer {
+    padding: 22px 24px;
+  }
+  .drawer-link-text {
+    font-size: 0.92rem;
+  }
+}
+
+/* ==========================================================================
+   Plantae World — Luxury 3-Column Site Footer (Universal)
+   ========================================================================== */
+.site-footer {
+  position: relative;
+  z-index: 10;
+  background: #ffffff;
+  border-top: 3px solid var(--cream, #dfcfab);
+  padding: 56px clamp(24px, 6vw, 100px) 32px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  color: var(--muted, #4e5e51);
+  pointer-events: auto;
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.footer-main-row {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  margin-bottom: 44px;
+}
+
+/* Left: Botanical Emblem + Description */
+.footer-brand-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-emblem-link {
+  display: inline-flex;
+  width: 48px;
+  height: 58px;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.footer-emblem-link:hover {
+  transform: scale(1.06);
+}
+
+.footer-flower-emblem {
+  width: 48px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-about-text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--muted, #4e5e51);
+  margin: 0;
+  max-width: 360px;
+}
+
+/* Middle: Exposed Nav Links */
+.footer-nav-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--leaf-deep, #162619);
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  pointer-events: auto;
+  width: fit-content;
+}
+
+.footer-nav-link:hover {
+  color: var(--bronze, #846124);
+  transform: translateX(4px);
+}
+
+/* Right: Social & Quick Contact */
+.footer-actions-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-actions-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze, #846124);
+}
+
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(36, 60, 40, 0.16);
+  background: #faf8f3;
+  color: var(--leaf-deep, #162619);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-icon-btn svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.footer-icon-btn:hover {
+  transform: translateY(-2px);
+  background: var(--leaf, #243c28);
+  color: #ffffff;
+  border-color: var(--leaf, #243c28);
+  box-shadow: 0 4px 12px rgba(36, 60, 40, 0.15);
+}
+
+.footer-btn-wa:hover {
+  background: #25d366 !important;
+  border-color: #25d366 !important;
+  color: #ffffff !important;
+}
+
+.footer-btn-ig:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
+
+.footer-btn-fb:hover {
+  background: #1877f2 !important;
+  border-color: #1877f2 !important;
+  color: #ffffff !important;
+}
+
+.footer-contact-quick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--ink, #162619);
+  font-weight: 600;
+}
+
+.footer-contact-quick a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-contact-quick a:hover {
+  color: var(--leaf, #243c28);
+}
+
+/* Bottom Bar */
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line, rgba(36, 60, 40, 0.12));
+  font-size: 0.72rem;
+  color: var(--muted, #4e5e51);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-brand {
+  font-weight: 700;
+  color: var(--leaf-deep, #162619);
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 1080px) {
+  .footer-main-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .footer-brand-side {
+    align-items: center;
+  }
+  .footer-about-text {
+    max-width: 100%;
+  }
+  .footer-nav-middle {
+    display: none !important;
+  }
+  .footer-actions-right {
+    align-items: center;
+  }
+  .footer-social-icons {
+    justify-content: center;
+  }
+  .footer-contact-quick {
+    justify-content: center;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  .footer-bottom-address,
+  .footer-bottom-tagline {
+    display: none;
+  }
+  .footer-bottom-brand {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--leaf-deep, #162619);
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Global Consultation Modal Card (Shared across all pages)
+   ========================================================================== */
+.consult-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 18, 12, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.consult-modal-backdrop.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.consult-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.consult-modal.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.consult-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #ffffff;
+  border: 1px solid rgba(36, 60, 40, 0.18);
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  padding: clamp(26px, 4vw, 40px);
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.consult-modal.is-open .consult-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.consult-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--leaf-deep, #162619);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.consult-modal-close:hover {
+  background: rgba(36, 60, 40, 0.08);
+  transform: scale(1.1);
+}
+
+.consult-modal-header {
+  margin-bottom: 22px;
+  padding-right: 32px;
+}
+
+.consult-modal-header .kicker {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze, #846124);
+  margin: 0 0 6px;
+}
+
+.consult-modal-title {
+  margin: 0 0 10px;
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+  font-weight: 500;
+  color: var(--leaf-deep, #162619);
+  line-height: 1.15;
+}
+
+.consult-modal-title em {
+  font-style: italic;
+  color: var(--leaf, #243c28);
+}
+
+.consult-modal-subtitle {
+  margin: 0;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.88rem;
+  color: var(--muted, #4e5e51);
+  line-height: 1.55;
+}
+
+/* Modal Form Styles */
+.consult-modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.consult-modal-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.consult-modal-form .field.full {
+  grid-column: 1 / -1;
+}
+
+.consult-modal-form label {
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--leaf-deep, #162619);
+}
+
+.consult-modal-form input,
+.consult-modal-form select,
+.consult-modal-form textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(36, 60, 40, 0.22);
+  border-radius: 2px;
+  background: #ffffff;
+  color: #162619;
+  font-size: 0.92rem;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, outline 0.2s ease;
+}
+
+.consult-modal-form input:focus,
+.consult-modal-form select:focus,
+.consult-modal-form textarea:focus {
+  outline: 2px solid var(--leaf, #243c28);
+  border-color: var(--leaf, #243c28);
+}
+
+.consult-modal-form textarea {
+  resize: vertical;
+}
+
+.consult-form-submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.consult-modal-form .submit {
+  width: max-content;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 1px solid var(--leaf, #243c28);
+  background: var(--leaf, #243c28);
+  color: #ffffff;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.consult-modal-form .submit:hover {
+  background: var(--leaf-deep, #162619);
+  color: #ffffff;
+}
+
+.consult-modal-form .whatsapp-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--leaf, #243c28);
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.consult-modal-form .whatsapp-contact:hover {
+  color: #128c7e;
+}
+
+@media (max-width: 600px) {
+  .consult-modal-form {
+    grid-template-columns: 1fr;
+  }
+  .consult-modal-card {
+    padding: 24px 18px;
+  }
+  .consult-form-submit-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .consult-modal-form .submit {
+    width: 100%;
+  }
+}

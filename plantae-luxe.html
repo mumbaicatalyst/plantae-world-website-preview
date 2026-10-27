@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="description" content="Plantae Luxe is Mumbai's premier botanical studio in Ballard Estate, Fort. Curating rare interior plants, sculptural planters, potted plant formations, corporate hampers, and live video plant consultations." />
+  <title>Plantae Luxe — Botanical Studio | Ballard Estate, Fort, Mumbai</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="nav-drawer.css?v=5.0" />
+  <link rel="stylesheet" href="plantae-luxe.css?v=3.2" />
+  <script>
+    // Bulletproof Navigation Drawer & Header Controller
+    function openNavDrawer() {
+      var d = document.getElementById('navDrawer');
+      var b = document.getElementById('navDrawerBackdrop');
+      var btn = document.getElementById('openNavDrawer');
+      if (d) {
+        d.classList.add('is-open');
+        d.setAttribute('aria-hidden', 'false');
+      }
+      if (b) {
+        b.classList.add('is-open');
+        b.setAttribute('aria-hidden', 'false');
+      }
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    window.openNavDrawer = openNavDrawer;
+
+    function closeNavDrawer() {
+      var d = document.getElementById('navDrawer');
+      var b = document.getElementById('navDrawerBackdrop');
+      var btn = document.getElementById('openNavDrawer');
+      if (d) {
+        d.classList.remove('is-open');
+        d.setAttribute('aria-hidden', 'true');
+      }
+      if (b) {
+        b.classList.remove('is-open');
+        b.setAttribute('aria-hidden', 'true');
+      }
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    window.closeNavDrawer = closeNavDrawer;
+
+    (function() {
+      function updateHeaderScroll() {
+        var h = document.getElementById('siteHeader') || document.querySelector('.site-header');
+        if (!h) return;
+        var y = window.scrollY || window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || (document.body && document.body.scrollTop) || 0;
+        if (y > 20) {
+          h.classList.add('is-scrolled');
+        } else {
+          h.classList.remove('is-scrolled');
+        }
+      }
+      window.addEventListener('scroll', updateHeaderScroll, { passive: true, capture: true });
+      document.addEventListener('scroll', updateHeaderScroll, { passive: true, capture: true });
+      window.addEventListener('wheel', function() { requestAnimationFrame(updateHeaderScroll); }, { passive: true });
+      window.addEventListener('touchmove', function() { requestAnimationFrame(updateHeaderScroll); }, { passive: true });
+      document.addEventListener('DOMContentLoaded', updateHeaderScroll);
+      window.addEventListener('load', updateHeaderScroll);
+      window.updateSiteHeaderScroll = updateHeaderScroll;
+    })();
+
+    // Early click delegation for menu buttons
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('#openNavDrawer, .header-menu-btn')) {
+        e.preventDefault();
+        openNavDrawer();
+      } else if (e.target.closest('#closeNavDrawer, .nav-drawer-close, #navDrawerBackdrop')) {
+        e.preventDefault();
+        closeNavDrawer();
+      }
+    }, true);
+  </script>
+</head>
+<body class="plantae-luxe-page">
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="Plantae World home">
+      <img class="brand-logo" src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
+    </a>
+
+    <div class="header-actions">
+      <a class="header-action-btn header-call-btn" href="tel:07400077765" aria-label="Call Plantae World 07400077765">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="header-action-btn header-wa-btn" href="https://wa.me/917400077765?text=Hi%20Plantae%20Luxe%2C%20I%20would%20like%20to%20enquire%20about%20a%20consultation" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      </a>
+      <button class="header-menu-btn" id="openNavDrawer" type="button" aria-expanded="false" aria-controls="navDrawer" aria-label="Open Navigation Menu" onclick="openNavDrawer()">
+        <span class="menu-icon-lines" aria-hidden="true">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Drawer Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop" aria-hidden="true" onclick="closeNavDrawer()"></div>
+
+  <!-- Off-Canvas Luxury Slide-in Drawer -->
+  <aside class="nav-drawer" id="navDrawer" aria-label="Site Navigation" aria-hidden="true">
+    <div class="nav-drawer-header">
+      <a class="nav-drawer-brand" href="index.html" aria-label="Plantae World">
+        <img src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
+      </a>
+      <button class="nav-drawer-close" id="closeNavDrawer" type="button" aria-label="Close navigation menu" onclick="closeNavDrawer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-drawer-body">
+      <nav class="drawer-nav-list" aria-label="Drawer Navigation">
+        <a class="drawer-nav-link" href="index.html">
+          <span class="drawer-link-text">Home</span>
+        </a>
+        <a class="drawer-nav-link" href="services.html">
+          <span class="drawer-link-text">Services</span>
+        </a>
+        <a class="drawer-nav-link" href="design-and-build.html">
+          <span class="drawer-link-text">Design and Build</span>
+        </a>
+        <a class="drawer-nav-link" href="selected-works.html">
+          <span class="drawer-link-text">Projects</span>
+        </a>
+        <a class="drawer-nav-link is-active" href="plantae-luxe.html">
+          <span class="drawer-link-text">Plantae Luxe Boutique</span>
+        </a>
+        <a class="drawer-nav-link" href="about.html">
+          <span class="drawer-link-text">About</span>
+        </a>
+        <a class="drawer-nav-link" href="contact.html">
+          <span class="drawer-link-text">Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="nav-drawer-footer">
+      <div class="drawer-contact-block">
+        <p class="drawer-block-title">Studio & Consultation</p>
+        <address class="drawer-address">
+          32, New Kamani Chambers, Adi Marzaban Path,<br>
+          Ballard Estate, Fort, Mumbai 400001
+        </address>
+
+        <div class="drawer-contact-links">
+          <div class="drawer-phone-wa-row">
+            <a class="drawer-contact-link" href="tel:07400077765" aria-label="Call 07400077765">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>07400077765</span>
+            </a>
+            <span class="drawer-divider">·</span>
+            <a class="drawer-contact-link" href="https://wa.me/917400077765?text=Hi%20Plantae%20Luxe%2C%20I%20would%20like%20to%20enquire%20about%20a%20consultation" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 07400077765">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+          <a class="drawer-contact-link" href="mailto:shruti@plantaeworld.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>shruti@plantaeworld.com</span>
+          </a>
+        </div>
+      </div>
+      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Book Consultation</button>
+    </div>
+  </aside>
+
+  <main id="top">
+
+    <!-- Hero Section -->
+    <section class="luxe-hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="kicker">Plantae Luxe Boutique . Fort, Mumbai</p>
+          <h1 class="hero-title" id="hero-title">
+            Where Living Botany Meets <em>Personal Styling.</em>
+          </h1>
+          <p class="hero-desc">
+            Plantae Luxe is the retail salon & personal styling arm of Plantae World. An experiential sanctuary of rare specimen plants, sculptural handcrafted planters, bespoke living arrangements, and personalized home consultations.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#virtual-consultation">Shop From Home (Video Call)</a>
+            <a class="btn btn-outline" href="#arrangements">Explore Collections</a>
+          </div>
+          <div class="hero-badges">
+            <div class="badge-item">
+              <strong>Ballard Estate</strong>
+              <span>Flagship Physical Studio</span>
+            </div>
+            <div class="badge-item">
+              <strong>Same-Day</strong>
+              <span>Mumbai Doorstep Delivery</span>
+            </div>
+            <div class="badge-item">
+              <strong>1-on-1 Video</strong>
+              <span>Shop-From-Home Concierge</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Dual Showcase -->
+        <div class="hero-media-showcase">
+          <!-- Video Reel: Founder Shruti Introducing Luxe -->
+          <div class="media-card media-card-tall">
+            <span class="video-overlay-badge">Founder's Note</span>
+            <video id="heroShrutiVideo" playsinline loop muted autoplay poster="assets/plantae-luxe/curated/store-interior-founder.png">
+              <source src="assets/plantae-luxe/curated/shruti-intro.mp4" type="video/mp4" />
+            </video>
+            <div class="media-caption-bar">
+              <strong>Shruti Sanghvi</strong>
+              <span>Founder & Botanical Stylist</span>
+            </div>
+            <button class="video-toggle-btn" id="toggleHeroAudio" aria-label="Toggle Sound">
+              <svg id="soundOffIcon" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+              <svg id="soundOnIcon" style="display:none;" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            </button>
+          </div>
+
+          <!-- Stacked Photos Column (Flushed & Aligned to Video Height) -->
+          <div class="hero-photos-col">
+            <!-- Top Image: Heritage Storefront -->
+            <div class="media-card media-card-photo">
+              <img src="assets/plantae-luxe/curated/storefront-exterior.png" alt="Plantae Luxe Ballard Estate Fort Mumbai storefront" loading="lazy" />
+              <div class="media-caption-bar">
+                <strong>Sprott Road Studio</strong>
+                <span>Ballard Estate, Fort</span>
+              </div>
+            </div>
+
+            <!-- Bottom Image: Curated Brass Display -->
+            <div class="media-card media-card-photo">
+              <img src="assets/plantae-luxe/store/photo-08.jpg" alt="Plantae Luxe studio interior brass display with exotic plants" loading="lazy" />
+              <div class="media-caption-bar">
+                <strong>Artisanal Curation</strong>
+                <span>Brass Shelves & Bonsai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: THE STORE EXPERIENCE & VISIT INFORMATION -->
+    <section class="section section-white store-section" id="store-experience">
+      <div class="store-head">
+        <p class="kicker">01 — The Physical Studio</p>
+        <h2 class="display">Step into our <em>Ballard Estate</em> studio.</h2>
+        <p class="lead">Housed in Mumbai's historic heritage quarter, Plantae Luxe is an unhurried botanical gallery pairing rare specimen plants with bespoke planters.</p>
+      </div>
+
+      <div class="store-layout">
+        <!-- Physical Visit Details Card -->
+        <article class="store-visit-card">
+          <div>
+            <h3>Visit The Studio</h3>
+            
+            <div class="store-detail-row">
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div class="detail-body">
+                <strong>Studio Address</strong>
+                <p>Shop 1, Bldg 288, S.B. Singh Rd (Sprott Rd), opp. Dakshin Hotel, Fort, Mumbai 400001</p>
+              </div>
+            </div>
+
+            <div class="store-detail-row">
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              </div>
+              <div class="detail-body">
+                <strong>Studio Hours</strong>
+                <p>Mon – Sat: 10:30 AM – 8:00 PM · Sun: 11:00 AM – 6:00 PM</p>
+              </div>
+            </div>
+
+            <div class="store-detail-row">
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+              </div>
+              <div class="detail-body">
+                <strong>Direct Line &amp; WhatsApp</strong>
+                <p>+91 99677 86444 · +91 99520 00012</p>
+              </div>
+            </div>
+
+            <div class="store-detail-row neighborhood-parking">
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+              </div>
+              <div class="detail-body">
+                <strong>Neighborhood &amp; Parking</strong>
+                <p>Valet &amp; street parking on Sprott Road. 2 mins from CST.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="store-actions">
+            <a class="btn btn-primary btn-icon" href="https://maps.google.com/?q=Plantae+Luxe+Ballard+Estate+Mumbai" target="_blank" rel="noopener noreferrer" aria-label="Get Google Maps Directions">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Directions</span>
+            </a>
+            <a class="btn btn-whatsapp btn-icon" href="https://wa.me/919952000012?text=Hi%20Plantae%20Luxe!%20I'm%20planning%20to%20visit%20your%20Ballard%20Estate%20store." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Concierge">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Studio Gallery Mosaic -->
+        <div class="store-gallery-mosaic">
+          <div class="mosaic-item wide">
+            <img src="assets/plantae-luxe/curated/boutique-exterior-ballard.jpg" alt="Plantae Luxe boutique Ballard Estate heritage building exterior storefront" loading="lazy" />
+            <span class="mosaic-tag">Boutique Exterior · Ballard Estate</span>
+          </div>
+          <div class="mosaic-item">
+            <img src="assets/plantae-luxe/curated/store-interior-studio.png" alt="Inside Plantae Luxe Fort studio" loading="lazy" />
+            <span class="mosaic-tag">Studio Corner</span>
+          </div>
+          <div class="mosaic-item">
+            <img src="assets/plantae-luxe/store/photo-05.jpg" alt="Consultation lounge inside Plantae Luxe" loading="lazy" />
+            <span class="mosaic-tag">Personal Styling Lounge</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: "SHOP FROM HOME" / VIRTUAL CONSULTATION SPOTLIGHT -->
+    <section class="section section-dark consultation-spotlight" id="virtual-consultation">
+      <div class="consultation-head">
+        <p class="kicker">02 — Shop From Home</p>
+        <h2 class="display">Virtual Consultations &amp; <em>Live Shopping.</em></h2>
+        <p class="lead">Tour our Ballard Estate studio via live video, receive tailored plant styling, and enjoy same-day Mumbai delivery.</p>
+      </div>
+
+      <div class="consultation-grid">
+        <!-- Interactive Video Player -->
+        <div class="video-frame-container">
+          <div class="video-status-strip">
+            <span class="live-badge">Live Studio Session</span>
+            <button class="sound-toggle-btn" id="toggleConsultSound">Unmute Audio</button>
+          </div>
+          <video id="consultationVideo" playsinline loop muted autoplay controls poster="assets/plantae-luxe/curated/store-interior-founder.png">
+            <source src="assets/plantae-luxe/virtual-consultation.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <!-- Consultation Steps & Booking -->
+        <div class="consultation-content">
+          <div class="consult-steps">
+            <div class="step-card">
+              <span class="step-num">01</span>
+              <div class="step-info">
+                <h4>Book a 15-Minute Video Call</h4>
+                <p>Pick a time. We dial into your phone live from the studio floor to browse available plants in real time.</p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <span class="step-num">02</span>
+              <div class="step-info">
+                <h4>Share Your Space &amp; Light</h4>
+                <p>Show us your lighting and room layout. Our stylists suggest varieties that naturally thrive in your home.</p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <span class="step-num">03</span>
+              <div class="step-info">
+                <h4>Pair Handcrafted Planters</h4>
+                <p>Watch us pair chosen specimens with ceramic, brass, and terracotta pots until you find your ideal match.</p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <span class="step-num">04</span>
+              <div class="step-info">
+                <h4>Same-Day Mumbai Delivery</h4>
+                <p>Potted in custom nutrient-rich soil and hand-delivered directly to your doorstep across Mumbai.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:20px;">
+            <a class="btn btn-whatsapp" href="https://wa.me/919952000012?text=Hi%20Plantae%20Luxe!%20I%20would%20like%20to%20book%20a%20Live%20Video%20Shopping%20Session%20for%20my%20home." target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Schedule Video Call on WhatsApp</span>
+            </a>
+            <a class="btn btn-cream" href="tel:+919967786444">
+              Call +91 99677 86444
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SIGNATURE FORMATIONS ("POTTED TOGETHER") -->
+    <section class="section arrangements-section" id="arrangements">
+      <div class="arrangements-head">
+        <div>
+          <p class="kicker">03 — Signature Formations</p>
+          <h2 class="display">Signature Formations, <em>Potted Together.</em></h2>
+        </div>
+        <p class="lead">Composed living art pieces — grouping harmonious foliage textures, tones, and sculptural forms in bespoke designer vessels.</p>
+      </div>
+
+      <div class="arrangements-grid" id="arrangementsGrid" data-mobile-carousel>
+        <!-- Arrangement 1 -->
+        <article class="arrangement-card">
+          <div class="arrangement-media">
+            <span class="arrangement-tag">Trio Harmony</span>
+            <img src="assets/plantae-luxe/curated/arrangement-aglaonema-zz-fittonia.png?v=2" alt="Aglaonema, ZZ Plant and Fittonia potted together" loading="lazy" />
+          </div>
+          <div class="arrangement-body">
+            <h3 class="arrangement-title">The Vibrant Contrast Trio</h3>
+            <p class="arrangement-summary">A dynamic balance of vibrant foliage, deep glossy leaves, and delicate vein textures.</p>
+            <div class="plant-chips">
+              <div class="plant-chip">
+                <strong>Aglaonema</strong>
+                <span>Pink, red & silver splashes</span>
+              </div>
+              <div class="plant-chip">
+                <strong>ZZ Plant</strong>
+                <span>Glossy, drought-tolerant resilience</span>
+              </div>
+              <div class="plant-chip">
+                <strong>Fittonia</strong>
+                <span>Striking nerve-leaf veins</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Arrangement 2 -->
+        <article class="arrangement-card">
+          <div class="arrangement-media">
+            <span class="arrangement-tag">Textural Masterpiece</span>
+            <img src="assets/plantae-luxe/curated/arrangement-aglaonema-fittonia-calathea.png?v=2" alt="Aglaonema, Fittonia and Calathea combined arrangement" loading="lazy" />
+          </div>
+          <div class="arrangement-body">
+            <h3 class="arrangement-title">Speckles, Veins & Stripes</h3>
+            <p class="arrangement-summary">Hand-painted leaf patterns meet expressive foliage that moves throughout the day.</p>
+            <div class="plant-chips">
+              <div class="plant-chip">
+                <strong>Aglaonema</strong>
+                <span>Blush pink speckles</span>
+              </div>
+              <div class="plant-chip">
+                <strong>Fittonia</strong>
+                <span>Perky moisture-indicator foliage</span>
+              </div>
+              <div class="plant-chip">
+                <strong>Calathea</strong>
+                <span>Night-closing prayer stripes</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Arrangement 3 -->
+        <article class="arrangement-card">
+          <div class="arrangement-media">
+            <span class="arrangement-tag">Low-Light Luxe</span>
+            <img src="assets/plantae-luxe/curated/arrangement-zz-calathea-aglaonema.png?v=2" alt="ZZ, Calathea and Aglaonema living arrangement" loading="lazy" />
+          </div>
+          <div class="arrangement-body">
+            <h3 class="arrangement-title">The Architectural Palette</h3>
+            <p class="arrangement-summary">Engineered specifically for Mumbai apartments and workspaces with indirect or filtered light.</p>
+            <div class="plant-chips">
+              <div class="plant-chip">
+                <strong>ZZ Plant</strong>
+                <span>Thrives in low light & low water</span>
+              </div>
+              <div class="plant-chip">
+                <strong>Calathea</strong>
+                <span>Folds at sunset, opens at sunrise</span>
+              </div>
+              <div class="plant-chip">
+                <strong>Aglaonema</strong>
+                <span>Effortless color in dappled shade</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-nav" data-carousel-for="arrangementsGrid" aria-hidden="true">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Living Art &amp; Anthurium" data-index="0"></button>
+          <button class="carousel-dot" aria-label="Speckles, Veins &amp; Stripes" data-index="1"></button>
+          <button class="carousel-dot" aria-label="The Architectural Palette" data-index="2"></button>
+        </div>
+      </div>
+
+      <!-- Video Highlight: Add Color to Your Space -->
+      <div class="color-callout-strip">
+        <div class="color-callout-video">
+          <video playsinline loop muted autoplay>
+            <source src="assets/plantae-luxe/curated/add-color.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="color-callout-text">
+          <p class="kicker">Interior Styling Tip</p>
+          <h3>Add living color to neutral spaces.</h3>
+          <p>Plants aren't just greenery — they are living art pieces. By pairing rich tones like ruby Aglaonemas, striped Calatheas, and sculptural palms with neutral stone or warm travertine, you inject warmth, depth, and biophilic energy into any Mumbai apartment.</p>
+          <a class="btn btn-primary" href="https://wa.me/919952000012?text=Hi%20Shruti!%20I'd%20love%20some%20advice%20on%20adding%20colorful%20plants%20to%20my%20living%20room." target="_blank" rel="noopener noreferrer">
+            Get Styling Advice From Shruti
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CURATED OFFERINGS & CATEGORIES -->
+    <section class="section categories-section" id="categories">
+      <div class="categories-head">
+        <p class="kicker">04 — Curated Offerings</p>
+        <h2 class="display">Curated Collections for <em>Every Space.</em></h2>
+        <p class="lead">From rare collector specimens to bespoke corporate tokens, explore the three pillars of our Ballard Estate studio collection.</p>
+      </div>
+
+      <div class="categories-grid" id="categoriesGrid" data-mobile-carousel>
+        <!-- Category 1 -->
+        <article class="category-card">
+          <div class="category-visual">
+            <img src="assets/plantae-luxe/curated/Unique_Plants.png" alt="Unique and rare plants at Plantae Luxe" loading="lazy" />
+          </div>
+          <div class="category-content">
+            <span class="category-no">Collection 01</span>
+            <h3>Unique &amp; Rare Specimens</h3>
+            <p>Statement specimen plants selected for distinctive architectural silhouettes, rare variegations, and robust adaptability to indoor environments.</p>
+            <ul class="category-features">
+              <li>Ruffled Fan Palms &amp; Braided Money Trees</li>
+              <li>Dracaena 'Dara Singh' Architectural Stems</li>
+              <li>Rare Anthuriums &amp; Large-Leaf Philodendrons</li>
+              <li>Specimen Bonsai &amp; Sculptural Ficus</li>
+            </ul>
+            <a class="btn btn-outline" style="margin-top:auto;" href="https://wa.me/919952000012?text=Hello!%20Please%20share%20your%20current%20catalogue%20of%20unique%20and%20rare%20plants.">Inquire Catalogue</a>
+          </div>
+        </article>
+
+        <!-- Category 2 -->
+        <article class="category-card">
+          <div class="category-visual">
+            <img src="assets/plantae-luxe/curated/Cute_Planters.png" alt="Artisan cute planters and pots" loading="lazy" />
+          </div>
+          <div class="category-content">
+            <span class="category-no">Collection 02</span>
+            <h3>Sculptural Artisan Planters</h3>
+            <p>Custom ceramics, metallic brass urns, fluted stone cylinders, and textured terracotta designed specifically with root drainage and plant health in mind.</p>
+            <ul class="category-features">
+              <li>Hand-thrown Matte Ceramic Vessels</li>
+              <li>Warm Brass &amp; Polished Copper Planters</li>
+              <li>Fluted Architectural Pedestals</li>
+              <li>Character &amp; Playful Sculptural Forms</li>
+            </ul>
+            <a class="btn btn-outline" style="margin-top:auto;" href="https://wa.me/919952000012?text=Hello!%20I'm%20looking%20for%20designer%20pots%20and%20planters%20for%20my%20home.">View Planters</a>
+          </div>
+        </article>
+
+        <!-- Category 3 -->
+        <article class="category-card">
+          <div class="category-visual">
+            <img src="assets/plantae-luxe/curated/Warm_woven_hamper_display.png" alt="Luxury botanical gifting hampers" loading="lazy" />
+          </div>
+          <div class="category-content">
+            <span class="category-no">Collection 03</span>
+            <h3>Botanical Hampers &amp; Gifting</h3>
+            <p>Elevated living gifts for Diwali, housewarmings, weddings, and corporate milestones. Long-lasting gifts that grow more beautiful with time.</p>
+            <ul class="category-features">
+              <li>Festive Hampers with Artisan Candles &amp; Brass Pots</li>
+              <li>Personalized Handwritten Botanical Notes</li>
+              <li>Custom Corporate Branding &amp; Bulk Delivery</li>
+              <li>Care Manuals Included with Every Hamper</li>
+            </ul>
+            <a class="btn btn-outline" style="margin-top:auto;" href="https://wa.me/919952000012?text=Hi%20Plantae%20Luxe!%20I'd%20like%20to%20order%20botanical%20gifting%20hampers.">Order Hampers</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-nav" data-carousel-for="categoriesGrid" aria-hidden="true">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Unique Specimens" data-index="0"></button>
+          <button class="carousel-dot" aria-label="Artisan Planters" data-index="1"></button>
+          <button class="carousel-dot" aria-label="Botanical Hampers" data-index="2"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PLANT CARE ARCHIVE -->
+    <section class="section care-section" id="care-guide">
+      <div class="care-head">
+        <p class="kicker">05 — Studio Wisdom</p>
+        <h2 class="display">The Luxe <em>Care Ritual.</em></h2>
+        <p class="lead">Every plant from Plantae Luxe comes with a tailored care schedule and ongoing WhatsApp guidance from our horticulturists.</p>
+      </div>
+
+      <div class="care-grid" id="careGrid" data-mobile-carousel>
+        <!-- Care 1: Ruffled Fan Palm -->
+        <article class="care-card">
+          <div class="care-image">
+            <img src="assets/plantae-luxe/curated/care-ruffled-fan-palm.png" alt="Ruffled Fan Palm care guide" loading="lazy" />
+          </div>
+          <h4>Ruffled Fan Palm</h4>
+          <span class="care-subtitle">Architectural Fan Foliage</span>
+          <div class="care-rule">
+            <strong>Water:</strong> <span>Every 7–10 days</span>
+          </div>
+          <div class="care-rule">
+            <strong>Check:</strong> <span>When top 1–2 inches feel dry</span>
+          </div>
+          <div class="care-rule">
+            <strong>Avoid:</strong> <span>Waterlogged root bases</span>
+          </div>
+          <div class="care-rule">
+            <strong>Expert Tip:</strong> <span>Thrives in bright indirect morning light.</span>
+          </div>
+        </article>
+
+        <!-- Care 2: Calathea -->
+        <article class="care-card">
+          <div class="care-image">
+            <img src="assets/plantae-luxe/curated/care-calathea.png" alt="Calathea care guide" loading="lazy" />
+          </div>
+          <h4>Calathea</h4>
+          <span class="care-subtitle">Living Prayer Leaf</span>
+          <div class="care-rule">
+            <strong>Water:</strong> <span>Every 5–7 days</span>
+          </div>
+          <div class="care-rule">
+            <strong>Check:</strong> <span>Keep soil lightly moist, never soggy</span>
+          </div>
+          <div class="care-rule">
+            <strong>Avoid:</strong> <span>Complete soil drought</span>
+          </div>
+          <div class="care-rule">
+            <strong>Expert Tip:</strong> <span>Loves humidity; mist leaves twice weekly.</span>
+          </div>
+        </article>
+
+        <!-- Care 3: ZZ Plant -->
+        <article class="care-card">
+          <div class="care-image">
+            <img src="assets/plantae-luxe/curated/care-zz-plant.png" alt="ZZ Plant care guide" loading="lazy" />
+          </div>
+          <h4>ZZ Plant</h4>
+          <span class="care-subtitle">Indestructible Gloss</span>
+          <div class="care-rule">
+            <strong>Water:</strong> <span>Every 2–3 weeks</span>
+          </div>
+          <div class="care-rule">
+            <strong>Check:</strong> <span>Let soil dry completely</span>
+          </div>
+          <div class="care-rule">
+            <strong>Avoid:</strong> <span>Overwatering & standing water</span>
+          </div>
+          <div class="care-rule">
+            <strong>Expert Tip:</strong> <span>Rhizomes store water for long dry spells.</span>
+          </div>
+        </article>
+
+        <!-- Care 4: Dracaena Dara Singh -->
+        <article class="care-card">
+          <div class="care-image">
+            <img src="assets/plantae-luxe/curated/care-dracaena-dara-singh.png" alt="Dracaena Dara Singh care guide" loading="lazy" />
+          </div>
+          <h4>Dracaena 'Dara Singh'</h4>
+          <span class="care-subtitle">Stately Cane Specimen</span>
+          <div class="care-rule">
+            <strong>Water:</strong> <span>Every 10–14 days</span>
+          </div>
+          <div class="care-rule">
+            <strong>Check:</strong> <span>Allow top 2–3 inches to dry out</span>
+          </div>
+          <div class="care-rule">
+            <strong>Avoid:</strong> <span>Frequent shallow waterings</span>
+          </div>
+          <div class="care-rule">
+            <strong>Expert Tip:</strong> <span>Far more tolerant of underwatering than overwatering.</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="carousel-nav" data-carousel-for="careGrid" aria-hidden="true">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Ruffled Fan Palm" data-index="0"></button>
+          <button class="carousel-dot" aria-label="Calathea" data-index="1"></button>
+          <button class="carousel-dot" aria-label="ZZ Plant" data-index="2"></button>
+          <button class="carousel-dot" aria-label="Dracaena Dara Singh" data-index="3"></button>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <!-- Luxury Minimalist 3-Column Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
+      <div class="footer-main-row">
+        <!-- Left: Standalone Botanical Emblem + Brief Summary -->
+        <div class="footer-brand-side">
+          <a class="footer-emblem-link" href="index.html" aria-label="Plantae World Home">
+            <img class="footer-flower-emblem" src="assets/brand/emblem-plantae-dark.png" alt="Plantae World Botanical Emblem" />
+          </a>
+          <p class="footer-about-text">
+            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1985.
+          </p>
+        </div>
+
+        <!-- Middle: Nav Links (Replicating Top Drawer Menu) -->
+        <nav class="footer-nav-middle" aria-label="Footer Navigation">
+          <a class="footer-nav-link" href="index.html">Home</a>
+          <a class="footer-nav-link" href="services.html">Services</a>
+          <a class="footer-nav-link" href="design-and-build.html">Design and Build</a>
+          <a class="footer-nav-link" href="selected-works.html">Projects</a>
+          <a class="footer-nav-link" href="plantae-luxe.html">Plantae Luxe Boutique</a>
+          <a class="footer-nav-link" href="about.html">About</a>
+          <a class="footer-nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Right: Social & Quick Contact -->
+        <div class="footer-actions-right">
+          <span class="footer-actions-label">Connect with Us</span>
+          <div class="footer-social-icons">
+            <a class="footer-icon-btn footer-btn-wa" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20enquire%20about%20a%20landscaping%20project" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a class="footer-icon-btn footer-btn-ig" href="https://www.instagram.com/plantae.world" target="_blank" rel="noopener noreferrer" aria-label="Follow Plantae World on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a class="footer-icon-btn footer-btn-fb" href="https://www.facebook.com/plantae.world" target="_blank" rel="noopener noreferrer" aria-label="Follow Plantae World on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+          <div class="footer-contact-quick">
+            <a href="tel:07400077765">07400077765</a>
+            <span>·</span>
+            <a href="mailto:shruti@plantaeworld.com">shruti@plantaeworld.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Location -->
+      <div class="footer-bottom-row">
+        <span class="footer-bottom-brand">Plantae World™</span>
+        <span class="footer-bottom-address">Studio: 32, New Kamani Chambers, Ballard Estate, Fort, Mumbai 400001</span>
+        <span class="footer-bottom-tagline">Landscapes for Living</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Audio toggles for interactive video showcases
+    const heroVideo = document.getElementById('heroShrutiVideo');
+    const heroAudioBtn = document.getElementById('toggleHeroAudio');
+    const soundOffIcon = document.getElementById('soundOffIcon');
+    const soundOnIcon = document.getElementById('soundOnIcon');
+
+    if (heroAudioBtn && heroVideo) {
+      heroAudioBtn.addEventListener('click', () => {
+        if (heroVideo.muted) {
+          heroVideo.muted = false;
+          soundOffIcon.style.display = 'none';
+          soundOnIcon.style.display = 'block';
+        } else {
+          heroVideo.muted = true;
+          soundOffIcon.style.display = 'block';
+          soundOnIcon.style.display = 'none';
+        }
+      });
+    }
+
+    const consultVideo = document.getElementById('consultationVideo');
+    const consultSoundBtn = document.getElementById('toggleConsultSound');
+    if (consultSoundBtn && consultVideo) {
+      consultSoundBtn.addEventListener('click', () => {
+        if (consultVideo.muted) {
+          consultVideo.muted = false;
+          consultSoundBtn.textContent = 'Mute Audio';
+        } else {
+          consultVideo.muted = true;
+          consultSoundBtn.textContent = 'Unmute Audio';
+        }
+      });
+    }
+
+    // Mobile & iPad Carousel Controller (<= 900px)
+    function initMobileCarousels() {
+      const carousels = document.querySelectorAll('[data-mobile-carousel]');
+
+      carousels.forEach(carousel => {
+        const id = carousel.id;
+        const nav = document.querySelector(`.carousel-nav[data-carousel-for="${id}"]`);
+        if (!nav) return;
+
+        const dots = Array.from(nav.querySelectorAll('.carousel-dot'));
+        const items = Array.from(carousel.children);
+        if (items.length === 0 || dots.length === 0) return;
+
+        let currentIndex = 0;
+        let autoPlayTimer = null;
+        let isUserInteracting = false;
+        let resumeTimeout = null;
+
+        function updateDots(index) {
+          currentIndex = index;
+          dots.forEach((dot, i) => {
+            if (i === index) {
+              dot.classList.add('active');
+              dot.setAttribute('aria-current', 'true');
+            } else {
+              dot.classList.remove('active');
+              dot.removeAttribute('aria-current');
+            }
+          });
+        }
+
+        function scrollToIndex(index) {
+          if (index < 0 || index >= items.length) return;
+          const targetItem = items[index];
+          carousel.scrollTo({
+            left: targetItem.offsetLeft - carousel.offsetLeft,
+            behavior: 'smooth'
+          });
+          updateDots(index);
+        }
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            pauseAutoPlayTemporarily();
+            scrollToIndex(index);
+          });
+        });
+
+        let scrollTimeout = null;
+        carousel.addEventListener('scroll', () => {
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            const scrollLeft = carousel.scrollLeft;
+            const containerLeft = carousel.offsetLeft;
+            let closestIndex = 0;
+            let minDiff = Infinity;
+            items.forEach((item, idx) => {
+              const itemLeft = item.offsetLeft - containerLeft;
+              const diff = Math.abs(scrollLeft - itemLeft);
+              if (diff < minDiff) {
+                minDiff = diff;
+                closestIndex = idx;
+              }
+            });
+            updateDots(closestIndex);
+          }, 60);
+        }, { passive: true });
+
+        function startAutoPlay() {
+          stopAutoPlay();
+          autoPlayTimer = setInterval(() => {
+            if (window.innerWidth <= 900 && !isUserInteracting) {
+              const nextIndex = (currentIndex + 1) % items.length;
+              scrollToIndex(nextIndex);
+            }
+          }, 4500);
+        }
+
+        function stopAutoPlay() {
+          if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+          }
+        }
+
+        function pauseAutoPlayTemporarily(duration = 7000) {
+          isUserInteracting = true;
+          if (resumeTimeout) clearTimeout(resumeTimeout);
+          resumeTimeout = setTimeout(() => {
+            isUserInteracting = false;
+          }, duration);
+        }
+
+        carousel.addEventListener('touchstart', () => pauseAutoPlayTemporarily(), { passive: true });
+        carousel.addEventListener('touchmove', () => pauseAutoPlayTemporarily(), { passive: true });
+        carousel.addEventListener('mouseenter', () => { isUserInteracting = true; });
+        carousel.addEventListener('mouseleave', () => pauseAutoPlayTemporarily(3000));
+
+        startAutoPlay();
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMobileCarousels);
+    } else {
+      initMobileCarousels();
+    }
+  </script>
+  <script src="nav.js?v=3.7"></script>
+</body>
+</html>

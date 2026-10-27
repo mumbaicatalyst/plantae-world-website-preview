@@ -1,0 +1,29 @@
+.menu-toggle{display:none;border:1px solid rgba(34,49,36,.3);background:#ffffff;color:var(--ink);font:600 .72rem/1 "Plus Jakarta Sans",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:12px 14px;border-radius:2px}@media(max-width:900px){.menu-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto}.header,.site-header{justify-content:space-between}.header .nav,.site-header .nav{display:none}.header.nav-open .nav,.site-header.nav-open .nav{position:absolute;transform:none;top:calc(100% + 9px);right:0;left:0;display:flex;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:14px 22px;border:1px solid rgba(34,49,36,.18);background:#ffffff;backdrop-filter:blur(16px);box-shadow:0 14px 36px rgba(34,49,36,.14)}.header.nav-open .nav a,.site-header.nav-open .nav a{padding:16px 2px;border-bottom:1px solid rgba(34,49,36,.1);color:var(--ink);font-size:.84rem;font-weight:600}.header.nav-open .nav a:last-child,.site-header.nav-open .nav a:last-child{border-bottom:0}.header .cta,.site-header .consult,.site-header .cta,.cta.consult{display:none!important}.site-header.nav-open .nav{right:12px;left:12px}.header.nav-open .nav{top:70px}.site-header.nav-open .nav{top:67px}}
+
+/* Social links shared across the site footer */
+.social-links { display:inline-flex; align-items:center; flex-wrap:wrap; gap:10px; }
+.social-links a { color:var(--ink); font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; }
+.social-links a:hover, .social-links a:focus-visible { color:var(--leaf); }
+.footer { flex-wrap:wrap; }
+@media(max-width:560px) { .social-links { gap:16px; } }
+
+/* Compact social icons at every width keep the footer stable in narrow desktop panels and on mobile. */
+.social-links { gap:10px; }
+.social-link { display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(34,49,36,.22); border-radius:50%; color:var(--leaf); background:#ffffff; transition:all .2s; }
+.social-link svg { display:block; width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.social-link svg .social-fill { fill:currentColor; stroke:none; }
+.social-link .social-label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.social-link:hover, .social-link:focus-visible { border-color:var(--leaf); color:#ffffff; background:var(--leaf); }
+@media(max-width:560px) { .social-link { width:44px; height:44px; } .social-link svg { width:20px; height:20px; } }
+
+/* Keep social destinations as one unbreakable footer unit on desktop, but allow wrapping on narrow mobile */
+.social-links { flex:0 0 auto; flex-wrap:nowrap; min-width:max-content; white-space:nowrap; }
+.social-link { flex:0 0 auto; }
+@media(max-width:560px) {
+  .social-links { flex-wrap:wrap; min-width:0; white-space:normal; }
+}
+
+.footer-brand { gap:0; }
+.footer-mark { gap:0; }
+
+

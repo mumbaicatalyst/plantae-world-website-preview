@@ -1,0 +1,105 @@
+/**
+ * Plantae World — Iris Leaf Portal Preloader Styles
+ * Inspired by the botanical emblem capillary growth and aperture reveal.
+ */
+:root {
+  --portal-cream: #F6F5F0;
+  --plantae-green: #233B27;
+  --portal-glow: #dce6d5;
+}
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  pointer-events: all;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  will-change: opacity;
+}
+
+/* Fullscreen SVG that paints the warm cream loading screen AND punches the portal hole */
+.backdrop-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Centered container holding the Plantae Emblem */
+.logo-stage {
+  position: relative;
+  width: 210px;
+  height: 258px;
+  z-index: 2;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.plantae-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Mask strokes that reveal the emblem */
+.mask-stroke {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.seed-droplet {
+  fill: var(--plantae-green);
+}
+
+/* Soft luminous glow inside the flower bud before camera dives in */
+.bud-inner-glow {
+  fill: url(#budGlowGrad);
+  opacity: 0;
+  transform-origin: 94px 60px;
+}
+
+/* Defer visual display of navigation and hero text until aperture opens */
+html.has-intro .site-header {
+  opacity: 0;
+  transform: translateY(-16px);
+  will-change: opacity, transform;
+}
+
+html.has-intro .hero-copy {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: opacity, transform;
+}
+
+/* Hide preloader completely on return visits in the same session */
+html.no-intro #preloader,
+.no-intro #preloader {
+  display: none !important;
+}
+
+html.no-intro .site-header,
+html.no-intro .hero-copy {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  #preloader {
+    display: none !important;
+  }
+  .site-header,
+  .hero-copy {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
