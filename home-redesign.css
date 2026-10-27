@@ -459,14 +459,15 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
+  align-items: stretch;
 }
 
 .hp-typology-card {
   position: relative;
   overflow: hidden;
-  min-height: 290px;
+  min-height: 310px;
   border-radius: var(--hp-radius);
-  padding: 24px 20px;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -520,6 +521,9 @@
 .hp-typology-content {
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .hp-typology-icon {
@@ -551,21 +555,23 @@
 
 .hp-typology-title {
   font-family: var(--hp-serif);
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1.18vw, 1.22rem);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.2;
   color: #ffffff;
   margin: 0 0 8px 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
 }
 
 .hp-typology-desc {
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.88);
   margin: 0;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  min-height: 3.35rem; /* Aligns 3-line baselines uniformly */
 }
 
 /* --------------------------------------------------------------------------
