@@ -126,8 +126,11 @@
   // Smooth scroll to top when clicking Home link while already on home page
   document.querySelectorAll('a[href="index.html"], a[href="./"], a[href="/"], .footer-emblem-link').forEach(link => {
     link.addEventListener('click', (e) => {
-      const path = window.location.pathname;
-      const isHome = path.endsWith('index.html') || path === '/' || path.endsWith('/') || !path.includes('.html');
+      const path = (window.location.pathname || '').replace(/\/+$/, '') || '/';
+      const isHome = document.body.classList.contains('homepage') ||
+                     path === '/' ||
+                     path.endsWith('/index.html') ||
+                     path.endsWith('/index');
       if (isHome && (!link.hash || link.hash === '#')) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
