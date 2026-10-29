@@ -18,7 +18,7 @@ The website is engineered using pure, standards-compliant **Vanilla HTML5, CSS3,
 ├── design-and-build.html       # 3-Track Architectural Journey (Turnkey Execution)
 ├── selected-works.html         # Portfolio & Case Studies (Apartments, Villas, Commercial)
 ├── plantae-luxe.html           # Luxury Retail Boutique, Rare Specimens & Home Styling
-├── about.html                  # 40-Year Heritage (Since 1985), Founder Story & Philosophy
+├── about.html                  # 40-Year Heritage (Since 1983), Founder Story & Philosophy
 ├── contact.html                # Studio Location (Ballard Estate), Direct Channels & Enquiry Form
 ├── sitemap.xml                 # Search engine sitemap
 ├── robots.txt                  # Search engine crawler instructions
@@ -65,7 +65,7 @@ The contact page and consultation modals submit via **Web3Forms**, forwarding en
 
 ### Current Configuration:
 * **Access Key**: `760f1a7f-5c61-480c-81d3-ba9c7e1a1189`
-* **Recipient**: `shruti@plantaeworld.com`
+* **Recipient**: `info@plantaeworld.com`
 * **Spam Protection**: Configured with a hidden honeypot field (`botcheck`) and client-side validation.
 
 ### If You Need to Change the Destination Email:
@@ -138,6 +138,6 @@ location ~* \.(css|js|jpg|jpeg|png|gif|svg|mp4|webm|woff2)$ {
 Before making the website live to the public, verify:
 * [ ] **SSL / HTTPS is active**: Certificate is valid and all traffic redirects from HTTP to HTTPS.
 * [ ] **Robots meta tag updated**: Changed from `noindex, nofollow` to `index, follow`.
-* [ ] **Enquiry form test**: Send a live test enquiry via `contact.html` and confirm receipt in `shruti@plantaeworld.com`.
+* [ ] **Enquiry form test**: Send a live test enquiry via `contact.html` and confirm receipt in `info@plantaeworld.com`.
 * [ ] **WhatsApp integration**: Click the WhatsApp header and footer buttons to ensure they launch a direct WhatsApp chat to `+91 74000 77765`.
 * [ ] **Phone dialer test**: Tap the phone buttons on mobile to ensure direct dialing to `07400077765`.

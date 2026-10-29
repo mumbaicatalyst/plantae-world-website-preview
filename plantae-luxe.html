@@ -11,8 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="nav-drawer.css?v=5.0" />
-  <link rel="stylesheet" href="plantae-luxe.css?v=3.2" />
+  <link rel="stylesheet" href="nav-drawer.css?v=5.1" />
+  <link rel="stylesheet" href="search.css?v=1.2" />
+  <link rel="stylesheet" href="plantae-luxe.css?v=4.3" />
   <script>
     // Bulletproof Navigation Drawer & Header Controller
     function openNavDrawer() {
@@ -85,9 +86,15 @@
 
   <!-- Site Header -->
   <header class="site-header" id="siteHeader">
-    <a class="brand" href="index.html" aria-label="Plantae World home">
-      <img class="brand-logo" src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
-    </a>
+    <div class="brand brand-co-brand" style="display: inline-flex; align-items: center; gap: clamp(8px, 1.4vw, 14px);">
+      <a href="index.html" aria-label="Plantae World home" style="display: inline-flex; align-items: center;">
+        <img class="brand-logo" src="assets/brand/logo-plantae-world-white.png" alt="Plantae World" />
+      </a>
+      <span class="brand-co-divider" style="color: rgba(255, 255, 255, 0.45); font-family: var(--sans); font-size: 0.95rem; font-weight: 300; line-height: 1; user-select: none;" aria-hidden="true">✕</span>
+      <a href="plantae-luxe.html" aria-label="Plantae Luxe Boutique" style="display: inline-flex; align-items: center;">
+        <img class="brand-logo-luxe" src="assets/brand/plantae-luxe-script-gold.png" alt="Plantae Luxe" style="height: clamp(22px, 2.4vw, 30px); width: auto; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));" />
+      </a>
+    </div>
 
     <div class="header-actions">
       <a class="header-action-btn header-call-btn" href="tel:07400077765" aria-label="Call Plantae World 07400077765">
@@ -166,13 +173,13 @@
               <span>WhatsApp</span>
             </a>
           </div>
-          <a class="drawer-contact-link" href="mailto:shruti@plantaeworld.com">
+          <a class="drawer-contact-link" href="mailto:info@plantaeworld.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span>shruti@plantaeworld.com</span>
+            <span>info@plantaeworld.com</span>
           </a>
         </div>
       </div>
-      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Book Consultation</button>
+      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Request a Call</button>
     </div>
   </aside>
 
@@ -182,12 +189,13 @@
     <section class="luxe-hero" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-content">
-          <p class="kicker">Plantae Luxe Boutique . Fort, Mumbai</p>
-          <h1 class="hero-title" id="hero-title">
-            Where Living Botany Meets <em>Personal Styling.</em>
-          </h1>
+          <p class="kicker" style="color: var(--leaf, #243c28); font-weight: 700; letter-spacing: 0.18em;">THE BOUTIQUE · BALLARD ESTATE</p>
+          <div class="hero-luxe-brand-logo-wrap" style="margin: 4px 0 16px;">
+            <img src="assets/brand/plantae-luxe-script-gold.png" alt="Plantae LUXE" class="hero-luxe-emblem" style="max-width: clamp(210px, 24vw, 290px); height: auto; display: block; filter: drop-shadow(0 3px 12px rgba(36,60,40,0.18));" />
+            <h1 class="sr-only" id="hero-title">Plantae LUXE — Curated Plant Styling &amp; Gifts Boutique Store Mumbai</h1>
+          </div>
           <p class="hero-desc">
-            Plantae Luxe is the retail salon & personal styling arm of Plantae World. An experiential sanctuary of rare specimen plants, sculptural handcrafted planters, bespoke living arrangements, and personalized home consultations.
+            Plantae Luxe is our experiential retail salon in Ballard Estate, Fort. Discover rare botanical specimens, sculptural handcrafted planters, bespoke living arrangements, and personalized home styling consultations.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#virtual-consultation">Shop From Home (Video Call)</a>
@@ -254,7 +262,7 @@
     <!-- SECTION 1: THE STORE EXPERIENCE & VISIT INFORMATION -->
     <section class="section section-white store-section" id="store-experience">
       <div class="store-head">
-        <p class="kicker">01 — The Physical Studio</p>
+        <p class="kicker">The Physical Studio</p>
         <h2 class="display">Step into our <em>Ballard Estate</em> studio.</h2>
         <p class="lead">Housed in Mumbai's historic heritage quarter, Plantae Luxe is an unhurried botanical gallery pairing rare specimen plants with bespoke planters.</p>
       </div>
@@ -339,7 +347,7 @@
     <!-- SECTION 2: "SHOP FROM HOME" / VIRTUAL CONSULTATION SPOTLIGHT -->
     <section class="section section-dark consultation-spotlight" id="virtual-consultation">
       <div class="consultation-head">
-        <p class="kicker">02 — Shop From Home</p>
+        <p class="kicker">Shop From Home</p>
         <h2 class="display">Virtual Consultations &amp; <em>Live Shopping.</em></h2>
         <p class="lead">Tour our Ballard Estate studio via live video, receive tailored plant styling, and enjoy same-day Mumbai delivery.</p>
       </div>
@@ -409,7 +417,7 @@
     <section class="section arrangements-section" id="arrangements">
       <div class="arrangements-head">
         <div>
-          <p class="kicker">03 — Signature Formations</p>
+          <p class="kicker">Signature Formations</p>
           <h2 class="display">Signature Formations, <em>Potted Together.</em></h2>
         </div>
         <p class="lead">Composed living art pieces — grouping harmonious foliage textures, tones, and sculptural forms in bespoke designer vessels.</p>
@@ -524,7 +532,7 @@
     <!-- SECTION 4: CURATED OFFERINGS & CATEGORIES -->
     <section class="section categories-section" id="categories">
       <div class="categories-head">
-        <p class="kicker">04 — Curated Offerings</p>
+        <p class="kicker">Curated Offerings</p>
         <h2 class="display">Curated Collections for <em>Every Space.</em></h2>
         <p class="lead">From rare collector specimens to bespoke corporate tokens, explore the three pillars of our Ballard Estate studio collection.</p>
       </div>
@@ -600,7 +608,7 @@
     <!-- SECTION 5: PLANT CARE ARCHIVE -->
     <section class="section care-section" id="care-guide">
       <div class="care-head">
-        <p class="kicker">05 — Studio Wisdom</p>
+        <p class="kicker">Studio Wisdom</p>
         <h2 class="display">The Luxe <em>Care Ritual.</em></h2>
         <p class="lead">Every plant from Plantae Luxe comes with a tailored care schedule and ongoing WhatsApp guidance from our horticulturists.</p>
       </div>
@@ -609,7 +617,7 @@
         <!-- Care 1: Ruffled Fan Palm -->
         <article class="care-card">
           <div class="care-image">
-            <img src="assets/plantae-luxe/curated/care-ruffled-fan-palm.png" alt="Ruffled Fan Palm care guide" loading="lazy" />
+            <img src="assets/plantae-luxe/curated/care-ruffled-fan-palm.png?v=2" alt="Ruffled Fan Palm care guide" loading="lazy" />
           </div>
           <h4>Ruffled Fan Palm</h4>
           <span class="care-subtitle">Architectural Fan Foliage</span>
@@ -630,7 +638,7 @@
         <!-- Care 2: Calathea -->
         <article class="care-card">
           <div class="care-image">
-            <img src="assets/plantae-luxe/curated/care-calathea.png" alt="Calathea care guide" loading="lazy" />
+            <img src="assets/plantae-luxe/curated/care-calathea.png?v=2" alt="Calathea care guide" loading="lazy" />
           </div>
           <h4>Calathea</h4>
           <span class="care-subtitle">Living Prayer Leaf</span>
@@ -651,7 +659,7 @@
         <!-- Care 3: ZZ Plant -->
         <article class="care-card">
           <div class="care-image">
-            <img src="assets/plantae-luxe/curated/care-zz-plant.png" alt="ZZ Plant care guide" loading="lazy" />
+            <img src="assets/plantae-luxe/curated/care-zz-plant.png?v=2" alt="ZZ Plant care guide" loading="lazy" />
           </div>
           <h4>ZZ Plant</h4>
           <span class="care-subtitle">Indestructible Gloss</span>
@@ -672,7 +680,7 @@
         <!-- Care 4: Dracaena Dara Singh -->
         <article class="care-card">
           <div class="care-image">
-            <img src="assets/plantae-luxe/curated/care-dracaena-dara-singh.png" alt="Dracaena Dara Singh care guide" loading="lazy" />
+            <img src="assets/plantae-luxe/curated/care-dracaena-dara-singh.png?v=2" alt="Dracaena Dara Singh care guide" loading="lazy" />
           </div>
           <h4>Dracaena 'Dara Singh'</h4>
           <span class="care-subtitle">Stately Cane Specimen</span>
@@ -715,7 +723,7 @@
             <img class="footer-flower-emblem" src="assets/brand/emblem-plantae-dark.png" alt="Plantae World Botanical Emblem" />
           </a>
           <p class="footer-about-text">
-            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1985.
+            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1983.
           </p>
         </div>
 
@@ -747,7 +755,7 @@
           <div class="footer-contact-quick">
             <a href="tel:07400077765">07400077765</a>
             <span>·</span>
-            <a href="mailto:shruti@plantaeworld.com">shruti@plantaeworld.com</a>
+            <a href="mailto:info@plantaeworld.com">info@plantaeworld.com</a>
           </div>
         </div>
       </div>
@@ -905,5 +913,7 @@
     }
   </script>
   <script src="nav.js?v=4.0"></script>
+  <script src="search-index.js?v=2.1"></script>
+  <script src="search.js?v=1.2" defer></script>
 </body>
 </html>

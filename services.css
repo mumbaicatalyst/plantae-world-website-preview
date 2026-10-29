@@ -156,27 +156,28 @@ html body.services-page .site-header.is-scrolled {
   max-width: 860px;
 }
 
-/* Eyebrow: Exact Match to Homepage */
+/* Eyebrow: Pure White with High-Contrast Shadow */
 .services-hero-content .eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
   margin: 0 0 18px;
-  color: var(--cream);
+  color: #ffffff !important;
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
 }
 
 .services-hero-content .eyebrow::before {
   content: "";
   width: 28px;
   height: 1.5px;
-  background: currentColor;
+  background: #ffffff !important;
 }
 
-/* Title: Exact Match to Homepage clamp(2.3rem, 4.2vw, 4rem) */
+/* Title: Exact Match clamp(2.3rem, 4.2vw, 4rem) */
 .services-hero-title {
   margin: 0 0 18px;
   font-family: var(--serif);
@@ -184,13 +185,13 @@ html body.services-page .site-header.is-scrolled {
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.05;
-  color: #ffffff;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55);
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
 }
 
 .services-hero-title em {
   font-style: italic;
-  color: var(--cream);
+  color: #ffffff !important;
 }
 
 /* Description: Exact Match to Homepage clamp(1.02rem, 1.3vw, 1.15rem) */

@@ -1,0 +1,268 @@
+/* Plantae World — Site Search overlay */
+.header-search-btn svg {
+  stroke: #ffffff;
+  stroke-width: 2.2;
+}
+.header-search-btn:hover svg,
+.site-header.is-scrolled .header-search-btn:hover svg {
+  stroke: var(--cream, #dfcfab);
+}
+.site-header.is-scrolled .header-search-btn svg {
+  stroke: #ffffff;
+}
+
+.ps-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(56px, 11vh, 120px) 16px 16px;
+  background: rgba(10, 20, 12, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.ps-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ps-panel {
+  width: min(680px, 100%);
+  max-height: min(78vh, 720px);
+  display: flex;
+  flex-direction: column;
+  background: #faf6ec;
+  color: #162619;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transform: translateY(-14px) scale(0.985);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ps-overlay.is-open .ps-panel {
+  transform: none;
+}
+
+.ps-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(22, 38, 25, 0.12);
+}
+.ps-bar-icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: #243c28;
+}
+.ps-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 1.12rem;
+  color: #162619;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ps-input::placeholder {
+  color: rgba(22, 38, 25, 0.5);
+}
+.ps-input::-webkit-search-cancel-button {
+  display: none;
+}
+.ps-close {
+  flex: none;
+  border: 1px solid rgba(22, 38, 25, 0.25);
+  background: transparent;
+  color: #4a5d4d;
+  border-radius: 7px;
+  padding: 4px 9px;
+  font: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.ps-close:hover {
+  background: #243c28;
+  color: #fff;
+}
+
+.ps-body {
+  padding: 8px 10px 14px;
+  overflow-y: auto;
+}
+.ps-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 8px 6px;
+}
+.ps-chip {
+  border: 1px solid rgba(36, 60, 40, 0.28);
+  background: #fff;
+  color: #243c28;
+  border-radius: 2px;
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.ps-chip:hover {
+  background: #243c28;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.ps-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ps-group-label {
+  padding: 12px 12px 4px;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b7d6e;
+}
+.ps-result {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.ps-result svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  color: #243c28;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.ps-result.is-active {
+  background: #eaf0e4;
+}
+.ps-result.is-active svg {
+  opacity: 1;
+  transform: none;
+}
+.ps-result-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.ps-result-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.ps-cat {
+  flex: none;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a7a4a;
+}
+.ps-title {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.15rem;
+  line-height: 1.25;
+  color: #162619;
+}
+.ps-title mark {
+  background: rgba(223, 207, 171, 0.7);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+.ps-desc {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: #4a5d4d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ps-hint {
+  margin: 8px 12px 0;
+  font-size: 0.78rem;
+  color: #6b7d6e;
+}
+.ps-empty {
+  padding: 26px 14px 10px;
+  text-align: center;
+}
+.ps-empty p {
+  margin: 0 0 6px;
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.2rem;
+}
+.ps-empty .ps-empty-sub {
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #4a5d4d;
+  margin-bottom: 16px;
+}
+.ps-empty-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid #243c28;
+  background: #243c28;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ps-btn-ghost {
+  background: transparent;
+  color: #243c28;
+}
+
+/* Highlight on arrival at a section found through search */
+@keyframes ps-flash-glow {
+  0%   { box-shadow: 0 0 0 0 rgba(223, 207, 171, 0); }
+  25%  { box-shadow: 0 0 0 6px rgba(223, 207, 171, 0.85); }
+  100% { box-shadow: 0 0 0 0 rgba(223, 207, 171, 0); }
+}
+.ps-flash {
+  animation: ps-flash-glow 2.6s ease-out 1;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .ps-overlay { padding-top: 64px; }
+  .ps-panel { max-height: 82vh; border-radius: 14px; }
+  .ps-input { font-size: 1rem; }
+  .ps-result svg { opacity: 0.5; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ps-overlay, .ps-panel, .ps-chip, .ps-result, .ps-result svg { transition: none; }
+  .ps-flash { animation: none; outline: 2px solid #dfcfab; }
+}

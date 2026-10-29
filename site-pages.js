@@ -51,7 +51,7 @@
           submitBtn.textContent = originalText;
         }
         if (noteEl) {
-          noteEl.innerHTML = 'We couldn\'t send automatically. Please reach us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration:underline; font-weight:600; color:inherit;">+91 74000 77765</a> or <a href="mailto:shruti@plantaeworld.com" style="text-decoration:underline; color:inherit;">shruti@plantaeworld.com</a>.';
+          noteEl.innerHTML = 'We couldn\'t send automatically. Please reach us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration:underline; font-weight:600; color:inherit;">+91 74000 77765</a> or <a href="mailto:info@plantaeworld.com" style="text-decoration:underline; color:inherit;">info@plantaeworld.com</a>.';
           noteEl.style.color = '#a02b18';
         }
       }
@@ -106,7 +106,7 @@ const serviceCards=[...document.querySelectorAll(".service-card")];
           <div><b>Care</b><span data-project-care></span></div>
         </div>
         <div class="drawer-consult-cta">
-          <button class="drawer-consult-btn" type="button" onclick="if(window.openConsultModal){window.openConsultModal();}">Book Free Site Visit →</button>
+          <button class="drawer-consult-btn" type="button" onclick="if(window.openConsultModal){window.openConsultModal();}">Request a Call &amp; Quote →</button>
         </div>
       </div>
     </div>

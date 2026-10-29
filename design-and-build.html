@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site-pages.css" />
-  <link rel="stylesheet" href="nav-drawer.css?v=5.0" />
-  <link rel="stylesheet" href="design-and-build.css?v=3.4" />
+  <link rel="stylesheet" href="nav-drawer.css?v=5.1" />
+  <link rel="stylesheet" href="search.css?v=1.2" />
+  <link rel="stylesheet" href="design-and-build.css?v=7.2" />
   <link rel="canonical" href="https://plantaeworld.com/design-and-build.html" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_IN" />
@@ -141,13 +142,13 @@
               <span>WhatsApp</span>
             </a>
           </div>
-          <a class="drawer-contact-link" href="mailto:shruti@plantaeworld.com">
+          <a class="drawer-contact-link" href="mailto:info@plantaeworld.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span>shruti@plantaeworld.com</span>
+            <span>info@plantaeworld.com</span>
           </a>
         </div>
       </div>
-      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Book Consultation</button>
+      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Request a Call</button>
     </div>
   </aside>
 
@@ -157,9 +158,9 @@
          ==================================================================== -->
     <section class="db-hero-triptych" aria-labelledby="db-hero-title">
       <div class="db-hero-content">
-        <p class="db-hero-eyebrow"><span class="db-eyebrow-dash" aria-hidden="true">—</span> Design &amp; Build. Turnkey Execution</p>
-        <h1 class="db-hero-title" id="db-hero-title">From first conversation to a <em>landscape taking root.</em></h1>
-        <p class="db-hero-lede">Select a service scope below to explore each stage from planning to site completion.</p>
+        <p class="db-hero-eyebrow" style="color: #ffffff !important;"><span class="db-eyebrow-dash" aria-hidden="true">—</span> HOW WE WORK</p>
+        <h1 class="db-hero-title" id="db-hero-title">From Design to Installation</h1>
+        <p class="db-select-cue">Choose the service that fits your project to see the steps involved.</p>
       </div>
 
       <!-- 3-Way Triptych Architectural Portals (Desktop columns / Mobile stacked accordion) -->
@@ -272,6 +273,7 @@
               <span class="db-sidebar-kicker" id="sidebarKicker">Process Steps</span>
               <h3 class="db-sidebar-title" id="sidebarTitle">Full Design &amp; Build</h3>
             </div>
+            <p class="db-sidebar-tip"><span aria-hidden="true">↕</span> Click any step to jump to it, or simply scroll down.</p>
 
             <nav class="db-sidebar-nav" id="sidebarNav" aria-label="Step Links">
               <!-- Dynamically populated via JS matching active track with expandable descriptors -->
@@ -280,7 +282,7 @@
             <div class="db-sidebar-help">
               <p class="db-sidebar-help-text">Have a specific site condition or timeline?</p>
               <button class="db-sidebar-help-btn" type="button" onclick="openConsultModal()">
-                <span>Book Free Site Visit</span>
+                <span>Request a Call &amp; Quote</span>
                 <span aria-hidden="true">→</span>
               </button>
             </div>
@@ -386,7 +388,7 @@
             <div class="db-process-track" id="track-apartment-design" role="tabpanel" aria-label="Apartment Design Process">
               <div class="db-steps-list">
                 <!-- Step 1 -->
-                <article class="db-step-card js-reveal" id="ad-step-1" data-step-index="1" data-step-title="Discuss your space and priorities, and arrange a site visit" data-step-brief="Aligning on vision, followed by complimentary on-site measurement.">
+                <article class="db-step-card js-reveal" id="ad-step-1" data-step-index="1" data-step-title="Discuss your space and priorities, and arrange a site visit" data-step-brief="Aligning on vision, followed by on-site measurement.">
                   <div class="db-step-card-grid">
                     <figure class="db-step-media">
                       <img src="assets/images/design-build/apt-1.png?v=2" alt="Balcony consultation and site survey" loading="lazy" />
@@ -748,7 +750,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
             </div>
             <h3 class="db-assurance-card-title">Botanical Health Warranty</h3>
-            <p class="db-assurance-card-desc">We stand behind the living health of every project with complimentary post-handover establishment care and tailored Annual Maintenance Contracts (AMC).</p>
+            <p class="db-assurance-card-desc">We stand behind the living health of every project with post-handover establishment care and tailored Annual Maintenance Contracts (AMC).</p>
           </div>
         </div>
       </div>
@@ -764,7 +766,7 @@
         <p class="db-closing-lead">Whether curating greenery for a high-rise balcony or masterplanning a multi-acre private estate, our landscape architects design and build across Mumbai &amp; MMR, Alibaug, Lonavala, Khandala, Matheran, Mahabaleshwar, Panchgani, and select destination projects across India including Chennai.</p>
         
         <div class="db-closing-actions">
-          <button class="db-btn db-btn-primary" type="button" onclick="openConsultModal()">Book Complimentary Site Visit</button>
+          <button class="db-btn db-btn-primary" type="button" onclick="openConsultModal()">Request a Call &amp; Quote</button>
           <a class="db-btn db-btn-wa" href="https://wa.me/917400077765?text=Hello%20Plantae%20World!%20I%20am%20planning%20a%20landscape%20project%20and%20would%20like%20to%20discuss%20Design%20and%20Build." target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
             <span>Chat on WhatsApp</span>
@@ -778,7 +780,7 @@
         <div class="db-closing-reassurance">
           <div class="db-reassurance-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Complimentary Initial Consultation</span>
+            <span>Personal Call to Discuss Your Requirements</span>
           </div>
           <div class="db-reassurance-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -803,7 +805,7 @@
             <img class="footer-flower-emblem" src="assets/brand/emblem-plantae-dark.png" alt="Plantae World Botanical Emblem" />
           </a>
           <p class="footer-about-text">
-            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1985.
+            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1983.
           </p>
         </div>
 
@@ -835,7 +837,7 @@
           <div class="footer-contact-quick">
             <a href="tel:07400077765">07400077765</a>
             <span>·</span>
-            <a href="mailto:shruti@plantaeworld.com">shruti@plantaeworld.com</a>
+            <a href="mailto:info@plantaeworld.com">info@plantaeworld.com</a>
           </div>
         </div>
       </div>
@@ -853,6 +855,8 @@
   <script src="assets-map.js"></script>
   <script src="site-pages.js?v=4.0"></script>
   <script src="nav.js?v=4.0"></script>
+  <script src="search-index.js?v=2.1"></script>
+  <script src="search.js?v=1.2" defer></script>
 
   <!-- Interactive Triptych & Dynamic Journey Controller -->
   <script>
@@ -958,6 +962,7 @@
           }
 
           observeActiveTrackSteps(activeTrack);
+          setupStepNav(activeTrack);
         }
 
         // Optional smooth scroll to journey section
@@ -1053,6 +1058,8 @@
                   }
                 });
 
+                updateHint(stepCards, stepIdx);
+
                 if (mobileProgressText && stepTitle) {
                   mobileProgressText.textContent = 'Stage ' + stepIdx + ' of ' + stepCards.length + ' · ' + stepTitle;
                 }
@@ -1067,11 +1074,112 @@
           stepCards.forEach(function(card) {
             stepObserver.observe(card);
           });
+
+          // Reveal cards as soon as they enter the viewport (not only the narrow scroll-spy band)
+          if (revealObserver) revealObserver.disconnect();
+          revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-in-view');
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          }, { root: null, rootMargin: '0px 0px -6% 0px', threshold: 0.02 });
+          stepCards.forEach(function(card) {
+            revealObserver.observe(card);
+          });
         } else {
           stepCards.forEach(function(card) {
             card.classList.add('is-in-view');
           });
         }
+      }
+
+      // Step 1 must always be visible immediately, never waiting on scroll
+      function showFirstStep(track) {
+        var first = track && track.querySelector('.db-step-card');
+        if (first) first.classList.add('is-in-view');
+      }
+
+      var revealObserver = null;
+      var hintEl = null;
+      var hintCards = [];
+      var hintIdx = 1;
+
+      function goToCard(card) {
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Persistent "what happens next" hint above the steps
+      function ensureHint() {
+        if (hintEl) return hintEl;
+        var container = document.querySelector('.db-tracks-container');
+        if (!container) return null;
+        hintEl = document.createElement('div');
+        hintEl.className = 'db-step-hint';
+        hintEl.id = 'dbStepHint';
+        hintEl.setAttribute('aria-live', 'polite');
+        container.insertBefore(hintEl, container.firstChild);
+        hintEl.addEventListener('click', function(e) {
+          if (e.target.closest('.db-hint-next')) {
+            var next = hintCards[hintIdx];
+            if (next) goToCard(next);
+            else if (window.openConsultModal) window.openConsultModal();
+          }
+        });
+        return hintEl;
+      }
+
+      function updateHint(cards, idx) {
+        var el = ensureHint();
+        if (!el || !cards || !cards.length) return;
+        hintCards = Array.prototype.slice.call(cards);
+        hintIdx = idx;
+        var total = hintCards.length;
+        var nextCard = hintCards[idx];
+        if (nextCard) {
+          var nextTitle = nextCard.getAttribute('data-step-title') || ('Step ' + (idx + 1));
+          el.innerHTML =
+            '<span class="db-hint-badge">Step ' + idx + ' of ' + total + '</span>' +
+            '<span class="db-hint-msg">Keep scrolling, or click a step on the left, to see what comes next.</span>' +
+            '<button type="button" class="db-hint-next">Next: ' + nextTitle + ' <span aria-hidden="true">↓</span></button>';
+        } else {
+          el.innerHTML =
+            '<span class="db-hint-badge">Step ' + idx + ' of ' + total + '</span>' +
+            '<span class="db-hint-msg">That is the final step.</span>' +
+            '<button type="button" class="db-hint-next">Request a Call &amp; Quote <span aria-hidden="true">→</span></button>';
+        }
+      }
+
+      // "Next step" button at the bottom of every card + initial hint
+      function setupStepNav(track) {
+        var cards = track.querySelectorAll('.db-step-card');
+        cards.forEach(function(card, i) {
+          var old = card.querySelector('.db-step-next');
+          if (old) old.remove();
+          var bar = document.createElement('div');
+          bar.className = 'db-step-next';
+          var next = cards[i + 1];
+          if (next) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'db-step-next-btn';
+            btn.innerHTML = '<span class="db-step-next-label">Next step ' + (i + 2) + '</span><span class="db-step-next-title">' +
+              (next.getAttribute('data-step-title') || '') + '</span><span class="db-step-next-arrow" aria-hidden="true">↓</span>';
+            btn.addEventListener('click', function() { goToCard(next); });
+            bar.appendChild(btn);
+          } else {
+            var done = document.createElement('button');
+            done.type = 'button';
+            done.className = 'db-step-next-btn is-final';
+            done.innerHTML = '<span class="db-step-next-label">Ready to begin?</span><span class="db-step-next-title">Request a Call &amp; Quote</span><span class="db-step-next-arrow" aria-hidden="true">→</span>';
+            done.addEventListener('click', function() { if (window.openConsultModal) window.openConsultModal(); });
+            bar.appendChild(done);
+          }
+          card.appendChild(bar);
+        });
+        showFirstStep(track);
+        updateHint(cards, 1);
       }
 
       // Initial Setup: Full Design & Build default

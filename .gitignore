@@ -5,3 +5,15 @@ sources/
 assets/Projects/*.pdf
 assets/Projects/*.zip
 *.log
+
+# Local-only material and credentials must not be added to the website repository.
+backups/
+.env
+.env.*
+!.env.example
+assets/Projects/**/*.pdf
+assets/Projects/**/*.zip
+assets/Projects/**/*.pptx
+assets/Projects/**/*.docx
+assets/Projects/**/*.xlsx
+assets/Projects/Green\ Brown\ and\ Beige\ Modern\ Minimalist\ Private\ Villa\ Paradise\ Trifold\ Brochure\ 2/

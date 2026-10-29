@@ -1372,3 +1372,170 @@
     width: 100%;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Institutional Trust Banner & Partner Teaser (Home Redesign Additions)
+   -------------------------------------------------------------------------- */
+.hp-trust-marquee-section {
+  background: var(--hp-cream, #faf6ec);
+  border-bottom: 1px solid var(--hp-line, rgba(36, 60, 40, 0.12));
+  padding: clamp(24px, 3.5vw, 36px) clamp(20px, 4vw, 60px);
+}
+.hp-trust-marquee-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.hp-trust-label {
+  font-family: var(--hp-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hp-bronze, #846124);
+  text-align: center;
+}
+.hp-client-logos-row {
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3.2vw, 42px);
+  padding: 8px 0;
+}
+.hp-client-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 4px 6px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.9;
+}
+.hp-client-logo-item:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+.hp-client-logo-item img {
+  max-height: 38px;
+  max-width: 135px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.hp-trust-cta-wrap {
+  text-align: center;
+  margin-top: 4px;
+}
+.hp-trust-cta-link {
+  font-family: var(--hp-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hp-bronze, #846124);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+.hp-trust-cta-link:hover {
+  color: var(--hp-leaf-deep, #162619);
+}
+
+/* Home Partners Teaser */
+.hp-partners-teaser {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--hp-line, rgba(36, 60, 40, 0.12));
+}
+.hp-partners-teaser-label {
+  font-family: var(--hp-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hp-bronze, #846124);
+  margin-bottom: 18px;
+  display: block;
+}
+.hp-partners-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.hp-partner-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--hp-cream-soft, #fbf8f1);
+  border: 1px solid var(--hp-line, rgba(36, 60, 40, 0.12));
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.hp-partner-mini-card:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 38, 25, 0.08);
+}
+.hp-partner-mini-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hp-partner-mini-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+}
+.hp-partner-mini-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.hp-partner-mini-name {
+  font-family: var(--hp-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--hp-leaf-deep, #162619);
+  line-height: 1.2;
+}
+.hp-partner-mini-role {
+  font-family: var(--hp-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hp-bronze, #846124);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 900px) {
+  .hp-partners-teaser-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .hp-partners-teaser-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -56,6 +56,22 @@ html body.portfolio-page .site-header.is-scrolled {
   padding: 0;
 }
 
+.works-hero-instruction {
+  display: table;
+  max-width: min(100%, 560px);
+  margin: 18px auto 0;
+  padding: 9px 16px;
+  background: rgba(22, 38, 25, .85);
+  color: #f8f5eb;
+  font-family: var(--sans, "Plus Jakarta Sans", sans-serif);
+  font-size: clamp(.74rem, 1.1vw, .83rem);
+  font-weight: 600;
+  letter-spacing: .08em;
+  line-height: 1.45;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .55);
+}
+
 .rb-quad-col {
   position: relative;
   flex: 1;

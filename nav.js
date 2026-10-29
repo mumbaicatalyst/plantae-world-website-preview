@@ -154,7 +154,7 @@
 
 /* ==========================================================================
    Plantae World — Global Consultation Modal Controller
-   Provides the complimentary site visit / quote modal card across all pages.
+   Provides the request-a-call / get-a-quote modal card across all pages.
    ========================================================================== */
 (function initGlobalConsultModal() {
   function injectModalHTML() {
@@ -180,15 +180,15 @@
           '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>' +
         '</button>' +
         '<div class="consult-modal-header">' +
-          '<p class="kicker">Complimentary Onsite Consultation</p>' +
-          '<h2 class="consult-modal-title" id="consultModalTitle">Schedule a <em>Site Visit</em></h2>' +
+          '<p class="kicker">Talk to Plantae</p>' +
+          '<h2 class="consult-modal-title" id="consultModalTitle">Request a <em>Call &amp; Quote</em></h2>' +
           '<p class="consult-modal-subtitle">' +
-            'Our principal landscape architects visit your property across Mumbai, Alibaug, and the Western Ghats at zero charge to assess sunlight, drainage, soil conditions, and architectural potential.' +
+            'Tell us a little about your space and a Plantae specialist will call you to talk through your requirements and prepare a tailored quote.' +
           '</p>' +
         '</div>' +
         '<form class="consult-modal-form" id="consultationModalForm" data-consultation-form action="https://api.web3forms.com/submit" method="POST">' +
           '<input type="hidden" name="access_key" value="760f1a7f-5c61-480c-81d3-ba9c7e1a1189" />' +
-          '<input type="hidden" name="subject" value="New Consultation Request — Plantae World" />' +
+          '<input type="hidden" name="subject" value="New Call & Quote Request — Plantae World" />' +
           '<input type="hidden" name="from_name" value="Plantae World Website" />' +
           '<input type="checkbox" name="botcheck" class="hidden" style="display: none;" />' +
           '<div class="field">' +
@@ -221,12 +221,21 @@
             '</select>' +
           '</div>' +
           '<div class="field full">' +
+            '<label for="modal-calltime">Best Time to Call</label>' +
+            '<select id="modal-calltime" name="Preferred call time">' +
+              '<option>Morning (9 am – 12 pm)</option>' +
+              '<option>Afternoon (12 – 4 pm)</option>' +
+              '<option>Evening (4 – 7 pm)</option>' +
+              '<option>Any time</option>' +
+            '</select>' +
+          '</div>' +
+          '<div class="field full">' +
             '<label for="modal-message">About Your Space &amp; Requirements</label>' +
             '<textarea id="modal-message" name="Project details" rows="3" placeholder="Approximate area, current stage of construction or renovation, and design goals." maxlength="2000"></textarea>' +
           '</div>' +
           '<div class="field full consult-form-submit-row">' +
-            '<button class="submit" type="submit">Submit Request</button>' +
-            '<a class="whatsapp-contact" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20to%20schedule%20a%20complimentary%20onsite%20consultation" target="_blank" rel="noopener noreferrer">' +
+            '<button class="submit" type="submit">Request a Call</button>' +
+            '<a class="whatsapp-contact" href="https://wa.me/917400077765?text=Hi%20Plantae%20World%2C%20I%20would%20like%20a%20call%20to%20discuss%20my%20requirements%20and%20get%20a%20quote" target="_blank" rel="noopener noreferrer">' +
               '<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>' +
               '<span>Prefer WhatsApp? Message directly</span>' +
             '</a>' +
@@ -246,10 +255,10 @@
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var submitBtn = form.querySelector('button[type="submit"]');
-      var originalText = submitBtn ? submitBtn.textContent : 'Submit Request';
+      var originalText = submitBtn ? submitBtn.textContent : 'Request a Call';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting Request...';
+        submitBtn.textContent = 'Sending...';
       }
 
       var formData = new FormData(form);
@@ -278,11 +287,11 @@
               '<div style="width: 52px; height: 52px; border-radius: 50%; background: #eef6f0; color: #243c28; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">' +
                 '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>' +
               '</div>' +
-              '<h3 style="font-family: var(--serif, Georgia, serif); font-size: 1.9rem; margin: 0 0 10px; color: #162619; font-weight: 500;">Consultation Request Received</h3>' +
-              '<p style="font-size: 0.96rem; color: #4a5d4d; line-height: 1.6; max-width: 480px; margin: 0 auto 24px;">Thank you! Your project details have been received. Shruti and our principal landscape architects will review your space and be in touch within 24 hours.</p>' +
+              '<h3 style="font-family: var(--serif, Georgia, serif); font-size: 1.9rem; margin: 0 0 10px; color: #162619; font-weight: 500;">Call Request Received</h3>' +
+              '<p style="font-size: 0.96rem; color: #4a5d4d; line-height: 1.6; max-width: 480px; margin: 0 auto 24px;">Thank you! We have your details. A Plantae specialist will call you within 24 hours to discuss your requirements and prepare a quote.</p>' +
               '<div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">' +
                 '<button type="button" class="button fill" onclick="closeConsultModal()" style="min-height: 44px; padding: 0 24px; background: #243c28; color: #fff; border: none; cursor: pointer;">Close Window</button>' +
-                '<a class="button glass" href="https://wa.me/917400077765?text=Hello%20Plantae%20World!%20I%20just%20submitted%20a%20site%20visit%20request%20on%20your%20website." target="_blank" rel="noopener noreferrer" style="min-height: 44px; padding: 12px 22px; color: #162619; border: 1px solid rgba(22,38,25,0.3); text-decoration: none; display: inline-flex; align-items: center;">Need Instant Reply? WhatsApp Us</a>' +
+                '<a class="button glass" href="https://wa.me/917400077765?text=Hello%20Plantae%20World!%20I%20just%20requested%20a%20call%20and%20quote%20on%20your%20website." target="_blank" rel="noopener noreferrer" style="min-height: 44px; padding: 12px 22px; color: #162619; border: 1px solid rgba(22,38,25,0.3); text-decoration: none; display: inline-flex; align-items: center;">Need Instant Reply? WhatsApp Us</a>' +
               '</div>';
             form.style.display = 'none';
             card.appendChild(confirmation);
@@ -303,7 +312,7 @@
           errorBanner.style.cssText = 'color: #a02b18; font-size: 0.85rem; margin-top: 12px; text-align: center; line-height: 1.5; width: 100%;';
           form.appendChild(errorBanner);
         }
-        errorBanner.innerHTML = 'There was a network issue. Please message us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 600; color: inherit;">+91 74000 77765</a> or email <a href="mailto:shruti@plantaeworld.com" style="text-decoration: underline; color: inherit;">shruti@plantaeworld.com</a>.';
+        errorBanner.innerHTML = 'There was a network issue. Please message us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 600; color: inherit;">+91 74000 77765</a> or email <a href="mailto:info@plantaeworld.com" style="text-decoration: underline; color: inherit;">info@plantaeworld.com</a>.';
       });
     });
   }
@@ -363,7 +372,7 @@
   window.openConsultModal = openConsultModal;
   window.closeConsultModal = closeConsultModal;
 
-  // Global delegated click listener: intercepts any link or button for consultation/site visit
+  // Global delegated click listener: intercepts any link or button for call-back / quote requests
   document.addEventListener('click', function(e) {
     var trigger = e.target.closest('a[href*="consultation.html"], button.drawer-quote-btn, .js-open-consult, [data-open-consult-modal]');
     if (trigger) {

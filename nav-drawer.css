@@ -110,6 +110,56 @@ html body .site-header.is-scrolled,
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35)) !important;
 }
 
+/* Co-Branded Nav (Plantae World x Plantae Luxe) */
+.brand-co-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(8px, 1.4vw, 14px);
+}
+
+.brand-co-divider {
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1;
+  user-select: none;
+}
+
+.site-header.is-scrolled .brand-co-divider {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.brand-logo-luxe {
+  height: clamp(20px, 2.4vw, 29px);
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s ease;
+}
+
+.brand-logo-luxe:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 520px) {
+  .brand-co-brand {
+    gap: 6px;
+  }
+  .brand-logo {
+    height: 24px;
+    max-width: 100px;
+  }
+  .brand-co-divider {
+    font-size: 0.8rem;
+  }
+  .brand-logo-luxe {
+    height: 19px;
+    max-width: 90px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Header Actions Container (Right Side)
    -------------------------------------------------------------------------- */

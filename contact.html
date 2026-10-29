@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="nav-drawer.css?v=5.0" />
-  <link rel="stylesheet" href="site-pages.css?v=2.7" />
-  <link rel="stylesheet" href="contact.css?v=3.1" />
+  <link rel="stylesheet" href="nav-drawer.css?v=5.1" />
+  <link rel="stylesheet" href="search.css?v=1.2" />
+  <link rel="stylesheet" href="site-pages.css?v=3.0" />
+  <link rel="stylesheet" href="contact.css?v=4.0" />
 
   <link rel="canonical" href="https://plantaeworld.com/contact.html" />
   <meta property="og:type" content="website" />
@@ -179,13 +180,13 @@
               <span>WhatsApp</span>
             </a>
           </div>
-          <a class="drawer-contact-link" href="mailto:shruti@plantaeworld.com">
+          <a class="drawer-contact-link" href="mailto:info@plantaeworld.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span>shruti@plantaeworld.com</span>
+            <span>info@plantaeworld.com</span>
           </a>
         </div>
       </div>
-      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Book Consultation</button>
+      <button class="drawer-quote-btn" type="button" onclick="closeNavDrawer(); openConsultModal();">Request a Call</button>
     </div>
   </aside>
 
@@ -194,16 +195,16 @@
     <section class="page-hero contact-hero" aria-labelledby="contact-title">
       <!-- Left Column: Slimmer Editorial Greeting Card -->
       <div class="page-hero-copy contact-intro">
-        <p class="kicker">Contact Plantae World</p>
-        <h1 class="display" id="contact-title">Let’s begin with<br /><em>your place.</em></h1>
-        <p class="lede">Tell us about your site, the project, or an early idea. We offer complimentary initial site visits and consultations across Mumbai &amp; MMR.</p>
+        <p class="kicker" style="color: var(--leaf-deep, #162619); font-weight: 700; letter-spacing: 0.18em;">START YOUR LANDSCAPE PROJECT</p>
+        <h1 class="display" id="contact-title">Let’s Discuss<br /><em>Your Space.</em></h1>
+        <p class="lede">Tell us about your site, the project, or an early idea. A Plantae specialist will call you to discuss your requirements and prepare a quote, across Mumbai &amp; MMR and beyond.</p>
       </div>
 
       <!-- Right Column: Project Enquiry Form Beside Hero -->
       <div class="contact-form-panel" id="enquire" aria-labelledby="enquiry-title">
         <div class="contact-form-header">
-          <p class="kicker">Project Enquiry</p>
-          <h2 class="form-title" id="enquiry-title">Tell us about <em>what’s possible.</em></h2>
+          <p class="kicker" style="color: var(--leaf, #243c28); font-weight: 700; letter-spacing: 0.16em;">REQUEST A CONSULTATION</p>
+          <h2 class="form-title" id="enquiry-title">Tell Us About <em>Your Requirements.</em></h2>
         </div>
 
         <form class="form contact-form" data-consultation-form action="https://api.web3forms.com/submit" method="POST">
@@ -267,8 +268,12 @@
         
         <div class="contact-list">
           <article>
-            <b>Studio</b>
-            <address>32, New Kamani Chambers,<br />Adi Marzaban Path, Ballard Estate,<br />Fort, Mumbai 400001</address>
+            <b>Corporate Office</b>
+            <address>Plantae World LLP<br />32, 2nd Floor, New Kamani Chambers,<br />Adi Murzban Path, Ballard Estate,<br />Fort, Mumbai 400038</address>
+          </article>
+          <article>
+            <b>Plantae Luxe Studio</b>
+            <address>SB Singh Road, Fort, Mumbai</address>
           </article>
           <article>
             <b>Hours</b>
@@ -276,13 +281,11 @@
           </article>
           <article>
             <b>Write</b>
-            <p><a href="mailto:shruti@plantaeworld.com">shruti@plantaeworld.com</a></p>
+            <p><a href="mailto:info@plantaeworld.com">info@plantaeworld.com</a></p>
           </article>
           <article>
-            <b>Call</b>
-            <p>
-              <a href="tel:07400077765">07400077765</a><span class="detail-sep">·</span><a href="tel:+919967786444">+91 99677 86444</a>
-            </p>
+            <b>Call / WhatsApp</b>
+            <p><a href="tel:+917400077765">+91 74000 77765</a></p>
           </article>
           <article>
             <b>Follow / Connect</b>
@@ -326,7 +329,7 @@
             <img class="footer-flower-emblem" src="assets/brand/emblem-plantae-dark.png" alt="Plantae World Botanical Emblem" />
           </a>
           <p class="footer-about-text">
-            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1985.
+            Mumbai’s premier landscape architecture and living greenery practice. Creating bespoke residential sanctuaries and country estates since 1983.
           </p>
         </div>
 
@@ -358,7 +361,7 @@
           <div class="footer-contact-quick">
             <a href="tel:07400077765">07400077765</a>
             <span>·</span>
-            <a href="mailto:shruti@plantaeworld.com">shruti@plantaeworld.com</a>
+            <a href="mailto:info@plantaeworld.com">info@plantaeworld.com</a>
           </div>
         </div>
       </div>
@@ -375,6 +378,8 @@
   <script src="assets-map.js"></script>
   <script src="site-pages.js?v=4.0"></script>
   <script src="nav.js?v=4.0"></script>
+  <script src="search-index.js?v=2.1"></script>
+  <script src="search.js?v=1.2" defer></script>
   <script>
     (function() {
       var form = document.querySelector('.contact-form');
@@ -425,7 +430,7 @@
             submitBtn.textContent = originalBtnText;
           }
           if (note) {
-            note.innerHTML = 'There was a brief network issue. Please message us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration:underline; font-weight:600; color:inherit;">+91 74000 77765</a> or email <a href="mailto:shruti@plantaeworld.com" style="text-decoration:underline; color:inherit;">shruti@plantaeworld.com</a>.';
+            note.innerHTML = 'There was a brief network issue. Please message us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration:underline; font-weight:600; color:inherit;">+91 74000 77765</a> or email <a href="mailto:info@plantaeworld.com" style="text-decoration:underline; color:inherit;">info@plantaeworld.com</a>.';
             note.style.color = '#a02b18';
           }
         });
