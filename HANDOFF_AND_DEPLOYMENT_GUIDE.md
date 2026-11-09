@@ -64,8 +64,8 @@ Change it to:
 The contact page and consultation modals submit via **Web3Forms**, forwarding enquiries directly to Plantae's email inbox without requiring any server-side PHP or backend database.
 
 ### Current Configuration:
-* **Access Key**: `760f1a7f-5c61-480c-81d3-ba9c7e1a1189`
-* **Recipient**: `info@plantaeworld.com`
+* **Access Key**: `c1cc1b2c-c86d-4ac2-8fa3-909d81bf6cf6`
+* **Intended recipient**: `shruti@plantaeworld.com` (confirm delivery with a test submission)
 * **Spam Protection**: Configured with a hidden honeypot field (`botcheck`) and client-side validation.
 
 ### If You Need to Change the Destination Email:
@@ -138,6 +138,6 @@ location ~* \.(css|js|jpg|jpeg|png|gif|svg|mp4|webm|woff2)$ {
 Before making the website live to the public, verify:
 * [ ] **SSL / HTTPS is active**: Certificate is valid and all traffic redirects from HTTP to HTTPS.
 * [ ] **Robots meta tag updated**: Changed from `noindex, nofollow` to `index, follow`.
-* [ ] **Enquiry form test**: Send a live test enquiry via `contact.html` and confirm receipt in `info@plantaeworld.com`.
+* [ ] **Enquiry form test**: Send a live test enquiry via `contact.html` and confirm receipt in `shruti@plantaeworld.com`.
 * [ ] **WhatsApp integration**: Click the WhatsApp header and footer buttons to ensure they launch a direct WhatsApp chat to `+91 74000 77765`.
 * [ ] **Phone dialer test**: Tap the phone buttons on mobile to ensure direct dialing to `07400077765`.

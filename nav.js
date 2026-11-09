@@ -187,7 +187,7 @@
           '</p>' +
         '</div>' +
         '<form class="consult-modal-form" id="consultationModalForm" data-consultation-form action="https://api.web3forms.com/submit" method="POST">' +
-          '<input type="hidden" name="access_key" value="760f1a7f-5c61-480c-81d3-ba9c7e1a1189" />' +
+          '<input type="hidden" name="access_key" value="c1cc1b2c-c86d-4ac2-8fa3-909d81bf6cf6" />' +
           '<input type="hidden" name="subject" value="New Call & Quote Request — Plantae World" />' +
           '<input type="hidden" name="from_name" value="Plantae World Website" />' +
           '<input type="checkbox" name="botcheck" class="hidden" style="display: none;" />' +
@@ -312,7 +312,7 @@
           errorBanner.style.cssText = 'color: #a02b18; font-size: 0.85rem; margin-top: 12px; text-align: center; line-height: 1.5; width: 100%;';
           form.appendChild(errorBanner);
         }
-        errorBanner.innerHTML = 'There was a network issue. Please message us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 600; color: inherit;">+91 74000 77765</a> or email <a href="mailto:info@plantaeworld.com" style="text-decoration: underline; color: inherit;">info@plantaeworld.com</a>.';
+        errorBanner.innerHTML = 'There was a network issue. Please message us directly on WhatsApp at <a href="https://wa.me/917400077765" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 600; color: inherit;">+91 74000 77765</a> or email <a href="mailto:shruti@plantaeworld.com" style="text-decoration: underline; color: inherit;">shruti@plantaeworld.com</a>.';
       });
     });
   }
